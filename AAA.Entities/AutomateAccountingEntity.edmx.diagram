@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a851cdd14e044dea673913e77faa8f0" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.BarcodeSetting" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Company" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Currency" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.FinancialYear" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Master" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Privilege" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Role" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Setting" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.SuffixPrefix" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Tax" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.User" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.VoucherType" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Company_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_VoucherType_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Privilege_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_SuffixPrefix_VoucherType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.AccountGroup" Width="1.5" PointX="12.625" PointY="19.625" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.AccountLedger" Width="1.5" PointX="14.875" PointY="13" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.AdditionalCost" Width="1.5" PointX="17.125" PointY="9.125" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Area" Width="1.5" PointX="10.375" PointY="15.375" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Designation" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.PricingLevel" Width="1.5" PointX="12.625" PointY="11.625" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Route" Width="1.5" PointX="12.625" PointY="15.25" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AccountLedger_AccountGroup" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AccountLedger_Area" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AccountLedger_PricingLevel" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AccountLedger_Route" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdditionalCost_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdditionalCost_VoucherType" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Route_Area" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Employee" Width="1.5" PointX="14.625" PointY="0.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.SalaryPackage" Width="1.5" PointX="12.375" PointY="25.875" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Employee_Designation" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Employee_SalaryPackage" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.AdvancePayment" Width="1.5" PointX="20.125" PointY="5.125" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.BankReconciliation" Width="1.5" PointX="22.375" PointY="12.625" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Brand" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Detail" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.LedgerPosting" Width="1.5" PointX="20.125" PointY="11.25" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.ProductGroup" Width="1.5" PointX="7.375" PointY="13.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Unit" Width="1.5" PointX="5.375" PointY="16.75" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdvancePayment_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_LedgerPosting_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdvancePayment_Employee" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdvancePayment_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdvancePayment_SuffixPrefix" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_AdvancePayment_VoucherType" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_BankReconciliation_LedgerPosting" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Details_Master" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_LedgerPosting_Details" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_LedgerPosting_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_LedgerPosting_VoucherType" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Batch" Width="1.5" PointX="24.125" PointY="20" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Godown" Width="1.5" PointX="17.375" PointY="22.875" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.ModelNumber" Width="1.5" PointX="19.625" PointY="21.875" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Product" Width="1.5" PointX="21.875" PointY="17.5" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Rack" Width="1.5" PointX="19.625" PointY="31.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Size" Width="1.5" PointX="19.625" PointY="19" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Batch_Product" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Brand" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Godown" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Rack_Godown" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_ModelNumber" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_ProductGroup" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Rack" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Size" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Tax" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Product_Unit" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.BonusDeduction" Width="1.5" PointX="16.875" PointY="5.375" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.BudgetDetail" Width="1.5" PointX="19.625" PointY="1.125" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.BudgetMaster" Width="1.5" PointX="17.375" PointY="1" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.CompanyPath" Width="1.5" PointX="10.25" PointY="10.5" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_BonusDeduction_Employee" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_BudgetDetails_BudgetMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CompanyPath_Company" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.ExchangeRate" Width="1.5" PointX="8.375" PointY="17.375" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Field" Width="1.5" PointX="3" PointY="20.875" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Form" Width="1.5" PointX="0.75" PointY="21" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ExchangeRate_Currency" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Fields_Form" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
