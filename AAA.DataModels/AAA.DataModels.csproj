@@ -40,28 +40,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Budget\BaseBudgetDetailModel.cs" />
+    <Compile Include="Budget\BaseBudgetMasterModel.cs" />
     <Compile Include="Common\CommonAuditDatesModel.cs" />
     <Compile Include="Common\CommonAuditUserDetailsModel.cs" />
     <Compile Include="Common\CommonIdentityModel.cs" />
     <Compile Include="Company\BaseCompanyModel.cs" />
+    <Compile Include="Company\BaseCompanyPathModel.cs" />
+    <Compile Include="Master\BaseAccountGroupModel.cs" />
+    <Compile Include="Master\BaseAccountLedgerModel.cs" />
+    <Compile Include="Master\BaseAdditionalCostModel.cs" />
+    <Compile Include="Master\BaseAdvancePaymentModel.cs" />
+    <Compile Include="Master\BaseAreaModel.cs" />
+    <Compile Include="Master\BaseBatchModel.cs" />
+    <Compile Include="Master\BaseBrandModel.cs" />
+    <Compile Include="Master\BaseExchangeRateModel.cs" />
+    <Compile Include="Master\BaseGodownModel.cs" />
     <Compile Include="Master\BaseMasterModel.cs" />
+    <Compile Include="Master\BaseModelNumberModel.cs" />
+    <Compile Include="Master\BasePricingLevelModel.cs" />
+    <Compile Include="Master\BaseProductGroupModel.cs" />
+    <Compile Include="Master\BaseProductModel.cs" />
+    <Compile Include="Master\BaseRackModel.cs" />
+    <Compile Include="Master\BaseRouteModel.cs" />
+    <Compile Include="Master\BaseSizeModel.cs" />
     <Compile Include="Master\BaseTaxModel.cs" />
+    <Compile Include="Master\BaseUnitModel.cs" />
     <Compile Include="Master\BaseVoucherTypeModel.cs" />
+    <Compile Include="PayRoll\BaseBonusDeductionModel.cs" />
+    <Compile Include="PayRoll\BaseDesignationModel.cs" />
+    <Compile Include="PayRoll\BaseEmployeeModel.cs" />
+    <Compile Include="PayRoll\BaseSalaryPackageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\BaseBarcodeSettingModel.cs" />
     <Compile Include="Master\BaseCurrencyModel.cs" />
+    <Compile Include="Settings\BaseFieldModel.cs" />
     <Compile Include="Settings\BaseFinancialYearModel.cs" />
+    <Compile Include="Settings\BaseFormModel.cs" />
     <Compile Include="Settings\BasePrivilegeModel.cs" />
     <Compile Include="Settings\BaseRoleModel.cs" />
     <Compile Include="Settings\BaseSettingModel.cs" />
     <Compile Include="Settings\BaseSuffixPrifixModel.cs" />
     <Compile Include="Settings\BaseUserModel.cs" />
+    <Compile Include="Transaction\BaseBankReconciliationModel.cs" />
+    <Compile Include="Transaction\BaseDetailModel.cs" />
+    <Compile Include="Transaction\BaseLedgerPostingModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Budget\" />
-    <Folder Include="PayRoll\" />
     <Folder Include="Registers\" />
-    <Folder Include="Transaction\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

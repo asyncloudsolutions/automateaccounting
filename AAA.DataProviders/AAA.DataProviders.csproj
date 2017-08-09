@@ -51,12 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ProviderHelper.cs" />
+    <Compile Include="Contracts\IBudgetProvider.cs" />
     <Compile Include="Contracts\ICompanyProvider.cs" />
     <Compile Include="Contracts\IMasterProvider.cs" />
+    <Compile Include="Contracts\IPayRollProvider.cs" />
     <Compile Include="Contracts\ISettingsProvider.cs" />
+    <Compile Include="Contracts\ITransactionProvider.cs" />
+    <Compile Include="Core\BudgetProvider.cs" />
     <Compile Include="Core\CompanyProvider.cs" />
     <Compile Include="Core\MasterProvider.cs" />
+    <Compile Include="Core\PayRollProvider.cs" />
     <Compile Include="Core\SettingsProvider.cs" />
+    <Compile Include="Core\TransactionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

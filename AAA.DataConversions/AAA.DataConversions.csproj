@@ -40,12 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assemblers\BudgetAssembler.cs" />
     <Compile Include="Assemblers\CompanyAssembler.cs" />
     <Compile Include="Assemblers\MasterAssembler.cs" />
+    <Compile Include="Assemblers\PayRollAssembler.cs" />
     <Compile Include="Assemblers\SettingsAssembler.cs" />
+    <Compile Include="Assemblers\TransactionAssembler.cs" />
+    <Compile Include="Converters\BudgetConverter.cs" />
     <Compile Include="Converters\CompanyConverter.cs" />
     <Compile Include="Converters\MasterConverter.cs" />
+    <Compile Include="Converters\PayRollConverter.cs" />
     <Compile Include="Converters\SettingsConverter.cs" />
+    <Compile Include="Converters\TransactionConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

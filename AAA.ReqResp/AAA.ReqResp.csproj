@@ -41,9 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommonReqResp.cs" />
+    <Compile Include="Data\BudgetReqResp.cs" />
     <Compile Include="Data\CompanyReqResp.cs" />
     <Compile Include="Data\MasterReqResp.cs" />
+    <Compile Include="Data\PayRollReqResp.cs" />
     <Compile Include="Data\SettingsReqResp.cs" />
+    <Compile Include="Data\TransactionReqResp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
