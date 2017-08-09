@@ -11,7 +11,7 @@ using LinqKit;
 
 namespace AAA.DataProviders
 {
-    public class SettingsProvider : ISettingsProvider
+    public class SettingsProvider : ProviderHelper, ISettingsProvider
     {
         #region User
         #region Get
@@ -47,22 +47,12 @@ namespace AAA.DataProviders
                         try
                         {
                             User _user = request.BaseObject.ToUser();
-                            if (request.BaseObject.Id.HasValue) { _dbContext.Entry(_user).State = System.Data.Entity.EntityState.Modified; }
-                            else { _dbContext.Users.Add(_user); }
-                            _dbContext.SaveChanges();
+                            UpsertEntity<User>(request.BaseObject.Id, ref _user, _dbContext);
                             _response.BaseObject = _user.ToBaseUser();
                         }
-                        catch (Exception ex)
-                        {
-                            _response.Status = false;
-                            _response.StatusMessage = string.Format("Some error occurred during DB interaction. Message is something like : \n{0}", ex.Message);
-                        }
+                        catch (Exception ex) { AssignStatusData(_response, false, string.Format("Some error occurred during DB interaction. Message is something like : \n{0}", ex.Message)); }
                     }
-                    else
-                    {
-                        _response.Status = false;
-                        _response.StatusMessage = "No entity data recieved to insert/update.";
-                    }
+                    else { AssignStatusData(_response, false, "No entity data recieved to insert/update."); }
                 }
                 return _response;
             });

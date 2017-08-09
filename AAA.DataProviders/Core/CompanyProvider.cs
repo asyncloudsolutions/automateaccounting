@@ -10,7 +10,7 @@ using AAA.DataConversions;
 
 namespace AAA.DataProviders
 {
-    public class CompanyProvider : ICompanyProvider
+    public class CompanyProvider : ProviderHelper, ICompanyProvider
     {
         #region Company
         #region Get
@@ -44,22 +44,12 @@ namespace AAA.DataProviders
                         try
                         {
                             Company _company = request.BaseObject.ToCompany();
-                            if (request.BaseObject.Id.HasValue) { _dbContext.Entry(_company).State = System.Data.Entity.EntityState.Modified; }
-                            else { _dbContext.Companies.Add(_company); }
-                            _dbContext.SaveChanges();
+                            UpsertEntity<Company>(request.BaseObject.Id, ref _company, _dbContext);
                             _response.BaseObject = _company.ToBaseCompany();
                         }
-                        catch (Exception ex)
-                        {
-                            _response.Status = false;
-                            _response.StatusMessage = string.Format("Some error occurred during DB interaction. Message is something like : \n{0}", ex.Message);
-                        }
+                        catch (Exception ex) { AssignStatusData(_response, false, string.Format("Some error occurred during DB interaction. Message is something like : \n{0}", ex.Message)); }
                     }
-                    else
-                    {
-                        _response.Status = false;
-                        _response.StatusMessage = "No entity data recieved to insert/update.";
-                    }
+                    else { AssignStatusData(_response, false, "No entity data recieved to insert/update."); }
                 }
                 return _response;
             });

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ProviderHelper.cs" />
     <Compile Include="Contracts\ICompanyProvider.cs" />
     <Compile Include="Contracts\IMasterProvider.cs" />
     <Compile Include="Contracts\ISettingsProvider.cs" />
