@@ -88,6 +88,9 @@
     <Compile Include="Batch.cs">
       <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bom.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="BonusDeduction.cs">
       <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
     </Compile>
@@ -106,7 +109,40 @@
     <Compile Include="CompanyPath.cs">
       <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContraDetail.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContraMaster.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Counter.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditNoteDetail.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditNoteMaster.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Currency.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyAttendanceDetail.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailyAttendanceMaster.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailySalaryVoucherDetail.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DailySalaryVoucherMaster.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DebitNoteDetail.cs">
+      <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DebitNoteMaster.cs">
       <DependentUpon>AutomateAccountingEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Designation.cs">

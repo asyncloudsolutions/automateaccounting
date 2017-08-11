@@ -21,6 +21,10 @@ namespace AAA.Entities
             this.AdditionalCosts = new HashSet<AdditionalCost>();
             this.AdvancePayments = new HashSet<AdvancePayment>();
             this.LedgerPostings = new HashSet<LedgerPosting>();
+            this.ContraMasters = new HashSet<ContraMaster>();
+            this.CreditNoteMasters = new HashSet<CreditNoteMaster>();
+            this.DailySalaryVoucherMasters = new HashSet<DailySalaryVoucherMaster>();
+            this.DebitNoteMasters = new HashSet<DebitNoteMaster>();
         }
     
         public int Id { get; set; }
@@ -49,5 +53,13 @@ namespace AAA.Entities
         public virtual ICollection<AdvancePayment> AdvancePayments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LedgerPosting> LedgerPostings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ContraMaster> ContraMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CreditNoteMaster> CreditNoteMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DailySalaryVoucherMaster> DailySalaryVoucherMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DebitNoteMaster> DebitNoteMasters { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace AAA.Entities
         public Product()
         {
             this.Batches = new HashSet<Batch>();
+            this.Boms = new HashSet<Bom>();
         }
     
         public int Id { get; set; }
@@ -59,5 +60,7 @@ namespace AAA.Entities
         public virtual Size Size { get; set; }
         public virtual Tax Tax { get; set; }
         public virtual Unit Unit { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bom> Boms { get; set; }
     }
 }
