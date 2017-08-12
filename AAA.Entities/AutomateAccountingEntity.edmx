@@ -144,6 +144,20 @@
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Bom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UnitId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="varchar(max)" Nullable="false" />
+          <Property Name="ManufacturingDate" Type="datetime" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="Narration" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="BonusDeduction">
           <Key>
             <PropertyRef Name="Id" />
@@ -234,6 +248,81 @@
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="ContraDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContraMasterId" Type="int" Nullable="false" />
+          <Property Name="LedgerId" Type="int" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="int" Nullable="false" />
+          <Property Name="ChequeNumber" Type="varchar(max)" />
+          <Property Name="ChequeDate" Type="datetime" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContraMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SuffixPrefixId" Type="int" Nullable="false" />
+          <Property Name="LedgerId" Type="int" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="int" Nullable="false" />
+          <Property Name="FinancialYearId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="VoucherNumber" Type="varchar(max)" />
+          <Property Name="InvoiceNumber" Type="varchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Type" Type="varchar(max)" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Narration" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CounterName" Type="varchar(max)" Nullable="false" />
+          <Property Name="Narration" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreditNoteDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreditNoteMasterId" Type="int" Nullable="false" />
+          <Property Name="LedgerId" Type="int" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="int" Nullable="false" />
+          <Property Name="ChequeNumber" Type="varchar(max)" />
+          <Property Name="ChequeDate" Type="datetime" />
+          <Property Name="Credit" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Debit" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreditNoteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SuffixPrefixId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FinancialYearId" Type="int" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="int" Nullable="false" />
+          <Property Name="VoucherNumber" Type="varchar(max)" />
+          <Property Name="InvoiceNumber" Type="varchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Narration" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Currency">
           <Key>
             <PropertyRef Name="Id" />
@@ -245,6 +334,89 @@
           <Property Name="NoOfDecimalPlaces" Type="int" Nullable="false" />
           <Property Name="Narration" Type="varchar(max)" Nullable="false" />
           <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailyAttendanceDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DailyAttendanceMasterId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar(max)" />
+          <Property Name="Narration" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailyAttendanceMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailySalaryVoucherDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DailySalaryVoucherMasterId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Wage" Type="varchar(max)" />
+          <Property Name="Status" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DailySalaryVoucherMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LedgerId" Type="int" Nullable="false" />
+          <Property Name="SuffixPrefixId" Type="int" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="int" Nullable="false" />
+          <Property Name="FinancialYearId" Type="int" Nullable="false" />
+          <Property Name="VoucherNumber" Type="varchar(max)" />
+          <Property Name="InvoiceNumber" Type="varchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="SalaryDate" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Narration" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DebitNoteDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DebitNoteMasterId" Type="int" Nullable="false" />
+          <Property Name="LedgerId" Type="int" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="int" Nullable="false" />
+          <Property Name="ChequeNumber" Type="varchar(max)" />
+          <Property Name="ChequeDate" Type="datetime" />
+          <Property Name="Credit" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Debit" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DebitNoteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SuffixPrefixId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FinancialYearId" Type="int" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="int" Nullable="false" />
+          <Property Name="VoucherNumber" Type="varchar(max)" />
+          <Property Name="InvoiceNumber" Type="varchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Narration" Type="varchar(max)" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -785,6 +957,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Bom_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Bom" Type="Self.Bom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bom">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bom_Unit">
+          <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+          <End Role="Bom" Type="Self.Bom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bom">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_BonusDeduction_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="BonusDeduction" Type="Self.BonusDeduction" Multiplicity="*" />
@@ -830,6 +1026,366 @@
             </Principal>
             <Dependent Role="CompanyPath">
               <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraDetails_AccountLedger">
+          <End Role="AccountLedger" Type="Self.AccountLedger" Multiplicity="1" />
+          <End Role="ContraDetails" Type="Self.ContraDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetails">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraDetails_ContraMaster">
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="1" />
+          <End Role="ContraDetails" Type="Self.ContraDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContraMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetails">
+              <PropertyRef Name="ContraMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraDetails_ExchangeRate">
+          <End Role="ExchangeRate" Type="Self.ExchangeRate" Multiplicity="1" />
+          <End Role="ContraDetails" Type="Self.ContraDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetails">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_AccountLedger">
+          <End Role="AccountLedger" Type="Self.AccountLedger" Multiplicity="1" />
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_FinancialYear">
+          <End Role="FinancialYear" Type="Self.FinancialYear" Multiplicity="1" />
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_SuffixPrefix">
+          <End Role="SuffixPrefix" Type="Self.SuffixPrefix" Multiplicity="1" />
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_VoucherType">
+          <End Role="VoucherType" Type="Self.VoucherType" Multiplicity="1" />
+          <End Role="ContraMaster" Type="Self.ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteDetails_AccountLedger">
+          <End Role="AccountLedger" Type="Self.AccountLedger" Multiplicity="1" />
+          <End Role="CreditNoteDetails" Type="Self.CreditNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetails">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteDetails_CreditNoteMaster">
+          <End Role="CreditNoteMaster" Type="Self.CreditNoteMaster" Multiplicity="1" />
+          <End Role="CreditNoteDetails" Type="Self.CreditNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditNoteMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetails">
+              <PropertyRef Name="CreditNoteMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteDetails_ExchangeRate">
+          <End Role="ExchangeRate" Type="Self.ExchangeRate" Multiplicity="1" />
+          <End Role="CreditNoteDetails" Type="Self.CreditNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetails">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_FinancialYear">
+          <End Role="FinancialYear" Type="Self.FinancialYear" Multiplicity="1" />
+          <End Role="CreditNoteMaster" Type="Self.CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_SuffixPrefix">
+          <End Role="SuffixPrefix" Type="Self.SuffixPrefix" Multiplicity="1" />
+          <End Role="CreditNoteMaster" Type="Self.CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="CreditNoteMaster" Type="Self.CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_VoucherType">
+          <End Role="VoucherType" Type="Self.VoucherType" Multiplicity="1" />
+          <End Role="CreditNoteMaster" Type="Self.CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailyAttendanceDetails_DailyAttendanceMaster">
+          <End Role="DailyAttendanceMaster" Type="Self.DailyAttendanceMaster" Multiplicity="1" />
+          <End Role="DailyAttendanceDetails" Type="Self.DailyAttendanceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailyAttendanceMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyAttendanceDetails">
+              <PropertyRef Name="DailyAttendanceMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailyAttendanceDetails_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="DailyAttendanceDetails" Type="Self.DailyAttendanceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyAttendanceDetails">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster">
+          <End Role="DailySalaryVoucherMaster" Type="Self.DailySalaryVoucherMaster" Multiplicity="1" />
+          <End Role="DailySalaryVoucherDetails" Type="Self.DailySalaryVoucherDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherDetails">
+              <PropertyRef Name="DailySalaryVoucherMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherDetails_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="DailySalaryVoucherDetails" Type="Self.DailySalaryVoucherDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherDetails">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_AccountLedger">
+          <End Role="AccountLedger" Type="Self.AccountLedger" Multiplicity="1" />
+          <End Role="DailySalaryVoucherMaster" Type="Self.DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_FinancialYear">
+          <End Role="FinancialYear" Type="Self.FinancialYear" Multiplicity="1" />
+          <End Role="DailySalaryVoucherMaster" Type="Self.DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_SuffixPrefix">
+          <End Role="SuffixPrefix" Type="Self.SuffixPrefix" Multiplicity="1" />
+          <End Role="DailySalaryVoucherMaster" Type="Self.DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_VoucherType">
+          <End Role="VoucherType" Type="Self.VoucherType" Multiplicity="1" />
+          <End Role="DailySalaryVoucherMaster" Type="Self.DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_AccountLedger">
+          <End Role="AccountLedger" Type="Self.AccountLedger" Multiplicity="1" />
+          <End Role="DebitNoteDetails" Type="Self.DebitNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetails">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_DebitNoteMaster">
+          <End Role="DebitNoteMaster" Type="Self.DebitNoteMaster" Multiplicity="1" />
+          <End Role="DebitNoteDetails" Type="Self.DebitNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DebitNoteMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetails">
+              <PropertyRef Name="DebitNoteMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_ExchangeRate">
+          <End Role="ExchangeRate" Type="Self.ExchangeRate" Multiplicity="1" />
+          <End Role="DebitNoteDetails" Type="Self.DebitNoteDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetails">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_FinancialYear">
+          <End Role="FinancialYear" Type="Self.FinancialYear" Multiplicity="1" />
+          <End Role="DebitNoteMaster" Type="Self.DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_SuffixPrefix">
+          <End Role="SuffixPrefix" Type="Self.SuffixPrefix" Multiplicity="1" />
+          <End Role="DebitNoteMaster" Type="Self.DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="DebitNoteMaster" Type="Self.DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_VoucherType">
+          <End Role="VoucherType" Type="Self.VoucherType" Multiplicity="1" />
+          <End Role="DebitNoteMaster" Type="Self.DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="VoucherTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1118,13 +1674,25 @@
           <EntitySet Name="BankReconciliation" EntityType="Self.BankReconciliation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BarcodeSettings" EntityType="Self.BarcodeSettings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Batch" EntityType="Self.Batch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bom" EntityType="Self.Bom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BonusDeduction" EntityType="Self.BonusDeduction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BudgetDetails" EntityType="Self.BudgetDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BudgetMaster" EntityType="Self.BudgetMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyPath" EntityType="Self.CompanyPath" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContraDetails" EntityType="Self.ContraDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContraMaster" EntityType="Self.ContraMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Counter" EntityType="Self.Counter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreditNoteDetails" EntityType="Self.CreditNoteDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreditNoteMaster" EntityType="Self.CreditNoteMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailyAttendanceDetails" EntityType="Self.DailyAttendanceDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailyAttendanceMaster" EntityType="Self.DailyAttendanceMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailySalaryVoucherDetails" EntityType="Self.DailySalaryVoucherDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DailySalaryVoucherMaster" EntityType="Self.DailySalaryVoucherMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DebitNoteDetails" EntityType="Self.DebitNoteDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DebitNoteMaster" EntityType="Self.DebitNoteMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -1203,6 +1771,14 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Batch" EntitySet="Batch" />
           </AssociationSet>
+          <AssociationSet Name="FK_Bom_Product" Association="Self.FK_Bom_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Bom" EntitySet="Bom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bom_Unit" Association="Self.FK_Bom_Unit">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="Bom" EntitySet="Bom" />
+          </AssociationSet>
           <AssociationSet Name="FK_BonusDeduction_Employee" Association="Self.FK_BonusDeduction_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="BonusDeduction" EntitySet="BonusDeduction" />
@@ -1218,6 +1794,126 @@
           <AssociationSet Name="FK_CompanyPath_Company" Association="Self.FK_CompanyPath_Company">
             <End Role="Company" EntitySet="Company" />
             <End Role="CompanyPath" EntitySet="CompanyPath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraDetails_AccountLedger" Association="Self.FK_ContraDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedger" />
+            <End Role="ContraDetails" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraDetails_ContraMaster" Association="Self.FK_ContraDetails_ContraMaster">
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+            <End Role="ContraDetails" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraDetails_ExchangeRate" Association="Self.FK_ContraDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+            <End Role="ContraDetails" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_AccountLedger" Association="Self.FK_ContraMaster_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedger" />
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_FinancialYear" Association="Self.FK_ContraMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYear" />
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_SuffixPrefix" Association="Self.FK_ContraMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefix" />
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_User" Association="Self.FK_ContraMaster_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_VoucherType" Association="Self.FK_ContraMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherType" />
+            <End Role="ContraMaster" EntitySet="ContraMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteDetails_AccountLedger" Association="Self.FK_CreditNoteDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedger" />
+            <End Role="CreditNoteDetails" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteDetails_CreditNoteMaster" Association="Self.FK_CreditNoteDetails_CreditNoteMaster">
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMaster" />
+            <End Role="CreditNoteDetails" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteDetails_ExchangeRate" Association="Self.FK_CreditNoteDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+            <End Role="CreditNoteDetails" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_FinancialYear" Association="Self.FK_CreditNoteMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYear" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_SuffixPrefix" Association="Self.FK_CreditNoteMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefix" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_User" Association="Self.FK_CreditNoteMaster_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_VoucherType" Association="Self.FK_CreditNoteMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherType" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailyAttendanceDetails_DailyAttendanceMaster" Association="Self.FK_DailyAttendanceDetails_DailyAttendanceMaster">
+            <End Role="DailyAttendanceMaster" EntitySet="DailyAttendanceMaster" />
+            <End Role="DailyAttendanceDetails" EntitySet="DailyAttendanceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailyAttendanceDetails_Employee" Association="Self.FK_DailyAttendanceDetails_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="DailyAttendanceDetails" EntitySet="DailyAttendanceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster" Association="Self.FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster">
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMaster" />
+            <End Role="DailySalaryVoucherDetails" EntitySet="DailySalaryVoucherDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherDetails_Employee" Association="Self.FK_DailySalaryVoucherDetails_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="DailySalaryVoucherDetails" EntitySet="DailySalaryVoucherDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_AccountLedger" Association="Self.FK_DailySalaryVoucherMaster_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedger" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_FinancialYear" Association="Self.FK_DailySalaryVoucherMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYear" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_SuffixPrefix" Association="Self.FK_DailySalaryVoucherMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefix" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_VoucherType" Association="Self.FK_DailySalaryVoucherMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherType" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_AccountLedger" Association="Self.FK_DebitNoteDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedger" />
+            <End Role="DebitNoteDetails" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_DebitNoteMaster" Association="Self.FK_DebitNoteDetails_DebitNoteMaster">
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMaster" />
+            <End Role="DebitNoteDetails" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_ExchangeRate" Association="Self.FK_DebitNoteDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+            <End Role="DebitNoteDetails" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_FinancialYear" Association="Self.FK_DebitNoteMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYear" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_SuffixPrefix" Association="Self.FK_DebitNoteMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefix" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_User" Association="Self.FK_DebitNoteMaster_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_VoucherType" Association="Self.FK_DebitNoteMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherType" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMaster" />
           </AssociationSet>
           <AssociationSet Name="FK_Details_Master" Association="Self.FK_Details_Master">
             <End Role="Master" EntitySet="Master" />
@@ -1394,6 +2090,10 @@
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="AdvancePayments" Relationship="AsyncAutomateAccountingModel.FK_AdvancePayment_FinancialYear" FromRole="FinancialYear" ToRole="AdvancePayment" />
           <NavigationProperty Name="LedgerPostings" Relationship="AsyncAutomateAccountingModel.FK_LedgerPosting_FinancialYear" FromRole="FinancialYear" ToRole="LedgerPosting" />
+          <NavigationProperty Name="ContraMasters" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_FinancialYear" FromRole="FinancialYear" ToRole="ContraMaster" />
+          <NavigationProperty Name="CreditNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_FinancialYear" FromRole="FinancialYear" ToRole="CreditNoteMaster" />
+          <NavigationProperty Name="DailySalaryVoucherMasters" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_FinancialYear" FromRole="FinancialYear" ToRole="DailySalaryVoucherMaster" />
+          <NavigationProperty Name="DebitNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_FinancialYear" FromRole="FinancialYear" ToRole="DebitNoteMaster" />
         </EntityType>
         <EntityType Name="Master">
           <Key>
@@ -1469,6 +2169,10 @@
           <Property Name="VoucherTypeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="VoucherType" Relationship="Self.FK_SuffixPrefix_VoucherType" FromRole="SuffixPrefix" ToRole="VoucherType" />
           <NavigationProperty Name="AdvancePayments" Relationship="AsyncAutomateAccountingModel.FK_AdvancePayment_SuffixPrefix" FromRole="SuffixPrefix" ToRole="AdvancePayment" />
+          <NavigationProperty Name="ContraMasters" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_SuffixPrefix" FromRole="SuffixPrefix" ToRole="ContraMaster" />
+          <NavigationProperty Name="CreditNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_SuffixPrefix" FromRole="SuffixPrefix" ToRole="CreditNoteMaster" />
+          <NavigationProperty Name="DailySalaryVoucherMasters" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_SuffixPrefix" FromRole="SuffixPrefix" ToRole="DailySalaryVoucherMaster" />
+          <NavigationProperty Name="DebitNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_SuffixPrefix" FromRole="SuffixPrefix" ToRole="DebitNoteMaster" />
         </EntityType>
         <EntityType Name="Tax">
           <Key>
@@ -1498,6 +2202,9 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="ContraMasters" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_User" FromRole="User" ToRole="ContraMaster" />
+          <NavigationProperty Name="CreditNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_User" FromRole="User" ToRole="CreditNoteMaster" />
+          <NavigationProperty Name="DebitNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_User" FromRole="User" ToRole="DebitNoteMaster" />
         </EntityType>
         <EntityType Name="VoucherType">
           <Key>
@@ -1524,6 +2231,10 @@
           <NavigationProperty Name="AdditionalCosts" Relationship="AsyncAutomateAccountingModel.FK_AdditionalCost_VoucherType" FromRole="VoucherType" ToRole="AdditionalCost" />
           <NavigationProperty Name="AdvancePayments" Relationship="AsyncAutomateAccountingModel.FK_AdvancePayment_VoucherType" FromRole="VoucherType" ToRole="AdvancePayment" />
           <NavigationProperty Name="LedgerPostings" Relationship="AsyncAutomateAccountingModel.FK_LedgerPosting_VoucherType" FromRole="VoucherType" ToRole="LedgerPosting" />
+          <NavigationProperty Name="ContraMasters" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_VoucherType" FromRole="VoucherType" ToRole="ContraMaster" />
+          <NavigationProperty Name="CreditNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_VoucherType" FromRole="VoucherType" ToRole="CreditNoteMaster" />
+          <NavigationProperty Name="DailySalaryVoucherMasters" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_VoucherType" FromRole="VoucherType" ToRole="DailySalaryVoucherMaster" />
+          <NavigationProperty Name="DebitNoteMasters" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_VoucherType" FromRole="VoucherType" ToRole="DebitNoteMaster" />
         </EntityType>
         <Association Name="FK_Company_Currency">
           <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
@@ -1787,6 +2498,146 @@
             <End Role="Form" EntitySet="Forms" />
             <End Role="Field" EntitySet="Fields" />
           </AssociationSet>
+          <EntitySet Name="Boms" EntityType="AsyncAutomateAccountingModel.Bom" />
+          <EntitySet Name="ContraDetails" EntityType="AsyncAutomateAccountingModel.ContraDetail" />
+          <EntitySet Name="ContraMasters" EntityType="AsyncAutomateAccountingModel.ContraMaster" />
+          <AssociationSet Name="FK_ContraDetails_AccountLedger" Association="AsyncAutomateAccountingModel.FK_ContraDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedgers" />
+            <End Role="ContraDetail" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_AccountLedger" Association="AsyncAutomateAccountingModel.FK_ContraMaster_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedgers" />
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bom_Product" Association="AsyncAutomateAccountingModel.FK_Bom_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Bom" EntitySet="Boms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bom_Unit" Association="AsyncAutomateAccountingModel.FK_Bom_Unit">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Bom" EntitySet="Boms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraDetails_ContraMaster" Association="AsyncAutomateAccountingModel.FK_ContraDetails_ContraMaster">
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+            <End Role="ContraDetail" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraDetails_ExchangeRate" Association="AsyncAutomateAccountingModel.FK_ContraDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRates" />
+            <End Role="ContraDetail" EntitySet="ContraDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_FinancialYear" Association="AsyncAutomateAccountingModel.FK_ContraMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYears" />
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_SuffixPrefix" Association="AsyncAutomateAccountingModel.FK_ContraMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefixes" />
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_User" Association="AsyncAutomateAccountingModel.FK_ContraMaster_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContraMaster_VoucherType" Association="AsyncAutomateAccountingModel.FK_ContraMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherTypes" />
+            <End Role="ContraMaster" EntitySet="ContraMasters" />
+          </AssociationSet>
+          <EntitySet Name="Counters" EntityType="AsyncAutomateAccountingModel.Counter" />
+          <EntitySet Name="CreditNoteDetails" EntityType="AsyncAutomateAccountingModel.CreditNoteDetail" />
+          <EntitySet Name="CreditNoteMasters" EntityType="AsyncAutomateAccountingModel.CreditNoteMaster" />
+          <EntitySet Name="DailyAttendanceDetails" EntityType="AsyncAutomateAccountingModel.DailyAttendanceDetail" />
+          <EntitySet Name="DailyAttendanceMasters" EntityType="AsyncAutomateAccountingModel.DailyAttendanceMaster" />
+          <EntitySet Name="DailySalaryVoucherDetails" EntityType="AsyncAutomateAccountingModel.DailySalaryVoucherDetail" />
+          <EntitySet Name="DailySalaryVoucherMasters" EntityType="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" />
+          <EntitySet Name="DebitNoteDetails" EntityType="AsyncAutomateAccountingModel.DebitNoteDetail" />
+          <EntitySet Name="DebitNoteMasters" EntityType="AsyncAutomateAccountingModel.DebitNoteMaster" />
+          <AssociationSet Name="FK_CreditNoteDetails_AccountLedger" Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedgers" />
+            <End Role="CreditNoteDetail" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_AccountLedger" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedgers" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_AccountLedger" Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_AccountLedger">
+            <End Role="AccountLedger" EntitySet="AccountLedgers" />
+            <End Role="DebitNoteDetail" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteDetails_CreditNoteMaster" Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_CreditNoteMaster">
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMasters" />
+            <End Role="CreditNoteDetail" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteDetails_ExchangeRate" Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRates" />
+            <End Role="CreditNoteDetail" EntitySet="CreditNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_FinancialYear" Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYears" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_SuffixPrefix" Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefixes" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_User" Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CreditNoteMaster_VoucherType" Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherTypes" />
+            <End Role="CreditNoteMaster" EntitySet="CreditNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailyAttendanceDetails_DailyAttendanceMaster" Association="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_DailyAttendanceMaster">
+            <End Role="DailyAttendanceMaster" EntitySet="DailyAttendanceMasters" />
+            <End Role="DailyAttendanceDetail" EntitySet="DailyAttendanceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailyAttendanceDetails_Employee" Association="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="DailyAttendanceDetail" EntitySet="DailyAttendanceDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster">
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMasters" />
+            <End Role="DailySalaryVoucherDetail" EntitySet="DailySalaryVoucherDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherDetails_Employee" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="DailySalaryVoucherDetail" EntitySet="DailySalaryVoucherDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_FinancialYear" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYears" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_SuffixPrefix" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefixes" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DailySalaryVoucherMaster_VoucherType" Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherTypes" />
+            <End Role="DailySalaryVoucherMaster" EntitySet="DailySalaryVoucherMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_DebitNoteMaster" Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_DebitNoteMaster">
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMasters" />
+            <End Role="DebitNoteDetail" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteDetails_ExchangeRate" Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_ExchangeRate">
+            <End Role="ExchangeRate" EntitySet="ExchangeRates" />
+            <End Role="DebitNoteDetail" EntitySet="DebitNoteDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_FinancialYear" Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_FinancialYear">
+            <End Role="FinancialYear" EntitySet="FinancialYears" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_SuffixPrefix" Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_SuffixPrefix">
+            <End Role="SuffixPrefix" EntitySet="SuffixPrefixes" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_User" Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DebitNoteMaster_VoucherType" Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_VoucherType">
+            <End Role="VoucherType" EntitySet="VoucherTypes" />
+            <End Role="DebitNoteMaster" EntitySet="DebitNoteMasters" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AccountGroup">
           <Key>
@@ -1841,6 +2692,11 @@
           <NavigationProperty Name="AdditionalCosts" Relationship="AsyncAutomateAccountingModel.FK_AdditionalCost_AccountLedger" FromRole="AccountLedger" ToRole="AdditionalCost" />
           <NavigationProperty Name="AdvancePayments" Relationship="AsyncAutomateAccountingModel.FK_AdvancePayment_AccountLedger" FromRole="AccountLedger" ToRole="AdvancePayment" />
           <NavigationProperty Name="LedgerPostings" Relationship="AsyncAutomateAccountingModel.FK_LedgerPosting_AccountLedger" FromRole="AccountLedger" ToRole="LedgerPosting" />
+          <NavigationProperty Name="ContraDetails" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_AccountLedger" FromRole="AccountLedger" ToRole="ContraDetail" />
+          <NavigationProperty Name="ContraMasters" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_AccountLedger" FromRole="AccountLedger" ToRole="ContraMaster" />
+          <NavigationProperty Name="CreditNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_AccountLedger" FromRole="AccountLedger" ToRole="CreditNoteDetail" />
+          <NavigationProperty Name="DailySalaryVoucherMasters" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_AccountLedger" FromRole="AccountLedger" ToRole="DailySalaryVoucherMaster" />
+          <NavigationProperty Name="DebitNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_AccountLedger" FromRole="AccountLedger" ToRole="DebitNoteDetail" />
         </EntityType>
         <EntityType Name="AdditionalCost">
           <Key>
@@ -2031,6 +2887,8 @@
           <NavigationProperty Name="SalaryPackage" Relationship="AsyncAutomateAccountingModel.FK_Employee_SalaryPackage" FromRole="Employee" ToRole="SalaryPackage" />
           <NavigationProperty Name="AdvancePayments" Relationship="AsyncAutomateAccountingModel.FK_AdvancePayment_Employee" FromRole="Employee" ToRole="AdvancePayment" />
           <NavigationProperty Name="BonusDeductions" Relationship="AsyncAutomateAccountingModel.FK_BonusDeduction_Employee" FromRole="Employee" ToRole="BonusDeduction" />
+          <NavigationProperty Name="DailyAttendanceDetails" Relationship="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_Employee" FromRole="Employee" ToRole="DailyAttendanceDetail" />
+          <NavigationProperty Name="DailySalaryVoucherDetails" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_Employee" FromRole="Employee" ToRole="DailySalaryVoucherDetail" />
         </EntityType>
         <EntityType Name="SalaryPackage">
           <Key>
@@ -2193,6 +3051,7 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Products" Relationship="AsyncAutomateAccountingModel.FK_Product_Unit" FromRole="Unit" ToRole="Product" />
+          <NavigationProperty Name="Boms" Relationship="AsyncAutomateAccountingModel.FK_Bom_Unit" FromRole="Unit" ToRole="Bom" />
         </EntityType>
         <Association Name="FK_AdvancePayment_AccountLedger">
           <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
@@ -2406,6 +3265,7 @@
           <NavigationProperty Name="Size" Relationship="AsyncAutomateAccountingModel.FK_Product_Size" FromRole="Product" ToRole="Size" />
           <NavigationProperty Name="Tax" Relationship="AsyncAutomateAccountingModel.FK_Product_Tax" FromRole="Product" ToRole="Tax" />
           <NavigationProperty Name="Unit" Relationship="AsyncAutomateAccountingModel.FK_Product_Unit" FromRole="Product" ToRole="Unit" />
+          <NavigationProperty Name="Boms" Relationship="AsyncAutomateAccountingModel.FK_Bom_Product" FromRole="Product" ToRole="Bom" />
         </EntityType>
         <EntityType Name="Rack">
           <Key>
@@ -2657,6 +3517,9 @@
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Currency" Relationship="AsyncAutomateAccountingModel.FK_ExchangeRate_Currency" FromRole="ExchangeRate" ToRole="Currency" />
+          <NavigationProperty Name="ContraDetails" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_ExchangeRate" FromRole="ExchangeRate" ToRole="ContraDetail" />
+          <NavigationProperty Name="CreditNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_ExchangeRate" FromRole="ExchangeRate" ToRole="CreditNoteDetail" />
+          <NavigationProperty Name="DebitNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_ExchangeRate" FromRole="ExchangeRate" ToRole="DebitNoteDetail" />
         </EntityType>
         <EntityType Name="Field">
           <Key>
@@ -2700,6 +3563,599 @@
             </Principal>
             <Dependent Role="Field">
               <PropertyRef Name="FormId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Bom">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="UnitId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ManufacturingDate" Type="DateTime" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="Narration" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="AsyncAutomateAccountingModel.FK_Bom_Product" FromRole="Bom" ToRole="Product" />
+          <NavigationProperty Name="Unit" Relationship="AsyncAutomateAccountingModel.FK_Bom_Unit" FromRole="Bom" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="ContraDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContraMasterId" Type="Int32" Nullable="false" />
+          <Property Name="LedgerId" Type="Int32" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="Int32" Nullable="false" />
+          <Property Name="ChequeNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AccountLedger" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_AccountLedger" FromRole="ContraDetail" ToRole="AccountLedger" />
+          <NavigationProperty Name="ContraMaster" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_ContraMaster" FromRole="ContraDetail" ToRole="ContraMaster" />
+          <NavigationProperty Name="ExchangeRate" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_ExchangeRate" FromRole="ContraDetail" ToRole="ExchangeRate" />
+        </EntityType>
+        <EntityType Name="ContraMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuffixPrefixId" Type="Int32" Nullable="false" />
+          <Property Name="LedgerId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FinancialYearId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Narration" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AccountLedger" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_AccountLedger" FromRole="ContraMaster" ToRole="AccountLedger" />
+          <NavigationProperty Name="ContraDetails" Relationship="AsyncAutomateAccountingModel.FK_ContraDetails_ContraMaster" FromRole="ContraMaster" ToRole="ContraDetail" />
+          <NavigationProperty Name="FinancialYear" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_FinancialYear" FromRole="ContraMaster" ToRole="FinancialYear" />
+          <NavigationProperty Name="SuffixPrefix" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_SuffixPrefix" FromRole="ContraMaster" ToRole="SuffixPrefix" />
+          <NavigationProperty Name="User" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_User" FromRole="ContraMaster" ToRole="User" />
+          <NavigationProperty Name="VoucherType" Relationship="AsyncAutomateAccountingModel.FK_ContraMaster_VoucherType" FromRole="ContraMaster" ToRole="VoucherType" />
+        </EntityType>
+        <Association Name="FK_ContraDetails_AccountLedger">
+          <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraDetail" Role="ContraDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetail">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_AccountLedger">
+          <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bom_Product">
+          <End Type="AsyncAutomateAccountingModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.Bom" Role="Bom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bom">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bom_Unit">
+          <End Type="AsyncAutomateAccountingModel.Unit" Role="Unit" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.Bom" Role="Bom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bom">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraDetails_ContraMaster">
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraDetail" Role="ContraDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContraMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetail">
+              <PropertyRef Name="ContraMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraDetails_ExchangeRate">
+          <End Type="AsyncAutomateAccountingModel.ExchangeRate" Role="ExchangeRate" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraDetail" Role="ContraDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraDetail">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_FinancialYear">
+          <End Type="AsyncAutomateAccountingModel.FinancialYear" Role="FinancialYear" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_SuffixPrefix">
+          <End Type="AsyncAutomateAccountingModel.SuffixPrefix" Role="SuffixPrefix" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_User">
+          <End Type="AsyncAutomateAccountingModel.User" Role="User" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContraMaster_VoucherType">
+          <End Type="AsyncAutomateAccountingModel.VoucherType" Role="VoucherType" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.ContraMaster" Role="ContraMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContraMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CounterName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Narration" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CreditNoteDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreditNoteMasterId" Type="Int32" Nullable="false" />
+          <Property Name="LedgerId" Type="Int32" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="Int32" Nullable="false" />
+          <Property Name="ChequeNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+          <Property Name="Credit" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Debit" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AccountLedger" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_AccountLedger" FromRole="CreditNoteDetail" ToRole="AccountLedger" />
+          <NavigationProperty Name="CreditNoteMaster" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_CreditNoteMaster" FromRole="CreditNoteDetail" ToRole="CreditNoteMaster" />
+          <NavigationProperty Name="ExchangeRate" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_ExchangeRate" FromRole="CreditNoteDetail" ToRole="ExchangeRate" />
+        </EntityType>
+        <EntityType Name="CreditNoteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuffixPrefixId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FinancialYearId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Narration" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CreditNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteDetails_CreditNoteMaster" FromRole="CreditNoteMaster" ToRole="CreditNoteDetail" />
+          <NavigationProperty Name="FinancialYear" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_FinancialYear" FromRole="CreditNoteMaster" ToRole="FinancialYear" />
+          <NavigationProperty Name="SuffixPrefix" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_SuffixPrefix" FromRole="CreditNoteMaster" ToRole="SuffixPrefix" />
+          <NavigationProperty Name="User" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_User" FromRole="CreditNoteMaster" ToRole="User" />
+          <NavigationProperty Name="VoucherType" Relationship="AsyncAutomateAccountingModel.FK_CreditNoteMaster_VoucherType" FromRole="CreditNoteMaster" ToRole="VoucherType" />
+        </EntityType>
+        <EntityType Name="DailyAttendanceDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DailyAttendanceMasterId" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DailyAttendanceMaster" Relationship="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_DailyAttendanceMaster" FromRole="DailyAttendanceDetail" ToRole="DailyAttendanceMaster" />
+          <NavigationProperty Name="Employee" Relationship="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_Employee" FromRole="DailyAttendanceDetail" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="DailyAttendanceMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DailyAttendanceDetails" Relationship="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_DailyAttendanceMaster" FromRole="DailyAttendanceMaster" ToRole="DailyAttendanceDetail" />
+        </EntityType>
+        <EntityType Name="DailySalaryVoucherDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DailySalaryVoucherMasterId" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Wage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DailySalaryVoucherMaster" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster" FromRole="DailySalaryVoucherDetail" ToRole="DailySalaryVoucherMaster" />
+          <NavigationProperty Name="Employee" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_Employee" FromRole="DailySalaryVoucherDetail" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="DailySalaryVoucherMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LedgerId" Type="Int32" Nullable="false" />
+          <Property Name="SuffixPrefixId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="Int32" Nullable="false" />
+          <Property Name="FinancialYearId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="SalaryDate" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AccountLedger" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_AccountLedger" FromRole="DailySalaryVoucherMaster" ToRole="AccountLedger" />
+          <NavigationProperty Name="DailySalaryVoucherDetails" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster" FromRole="DailySalaryVoucherMaster" ToRole="DailySalaryVoucherDetail" />
+          <NavigationProperty Name="FinancialYear" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_FinancialYear" FromRole="DailySalaryVoucherMaster" ToRole="FinancialYear" />
+          <NavigationProperty Name="SuffixPrefix" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_SuffixPrefix" FromRole="DailySalaryVoucherMaster" ToRole="SuffixPrefix" />
+          <NavigationProperty Name="VoucherType" Relationship="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_VoucherType" FromRole="DailySalaryVoucherMaster" ToRole="VoucherType" />
+        </EntityType>
+        <EntityType Name="DebitNoteDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DebitNoteMasterId" Type="Int32" Nullable="false" />
+          <Property Name="LedgerId" Type="Int32" Nullable="false" />
+          <Property Name="ExchangeRateId" Type="Int32" Nullable="false" />
+          <Property Name="ChequeNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="3" />
+          <Property Name="Credit" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Debit" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AccountLedger" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_AccountLedger" FromRole="DebitNoteDetail" ToRole="AccountLedger" />
+          <NavigationProperty Name="DebitNoteMaster" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_DebitNoteMaster" FromRole="DebitNoteDetail" ToRole="DebitNoteMaster" />
+          <NavigationProperty Name="ExchangeRate" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_ExchangeRate" FromRole="DebitNoteDetail" ToRole="ExchangeRate" />
+        </EntityType>
+        <EntityType Name="DebitNoteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SuffixPrefixId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FinancialYearId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherTypeId" Type="Int32" Nullable="false" />
+          <Property Name="VoucherNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DebitNoteDetails" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteDetails_DebitNoteMaster" FromRole="DebitNoteMaster" ToRole="DebitNoteDetail" />
+          <NavigationProperty Name="FinancialYear" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_FinancialYear" FromRole="DebitNoteMaster" ToRole="FinancialYear" />
+          <NavigationProperty Name="SuffixPrefix" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_SuffixPrefix" FromRole="DebitNoteMaster" ToRole="SuffixPrefix" />
+          <NavigationProperty Name="User" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_User" FromRole="DebitNoteMaster" ToRole="User" />
+          <NavigationProperty Name="VoucherType" Relationship="AsyncAutomateAccountingModel.FK_DebitNoteMaster_VoucherType" FromRole="DebitNoteMaster" ToRole="VoucherType" />
+        </EntityType>
+        <Association Name="FK_CreditNoteDetails_AccountLedger">
+          <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteDetail" Role="CreditNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetail">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_AccountLedger">
+          <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Role="DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_AccountLedger">
+          <End Type="AsyncAutomateAccountingModel.AccountLedger" Role="AccountLedger" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteDetail" Role="DebitNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountLedger">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetail">
+              <PropertyRef Name="LedgerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteDetails_CreditNoteMaster">
+          <End Type="AsyncAutomateAccountingModel.CreditNoteMaster" Role="CreditNoteMaster" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteDetail" Role="CreditNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CreditNoteMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetail">
+              <PropertyRef Name="CreditNoteMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteDetails_ExchangeRate">
+          <End Type="AsyncAutomateAccountingModel.ExchangeRate" Role="ExchangeRate" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteDetail" Role="CreditNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteDetail">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_FinancialYear">
+          <End Type="AsyncAutomateAccountingModel.FinancialYear" Role="FinancialYear" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteMaster" Role="CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_SuffixPrefix">
+          <End Type="AsyncAutomateAccountingModel.SuffixPrefix" Role="SuffixPrefix" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteMaster" Role="CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_User">
+          <End Type="AsyncAutomateAccountingModel.User" Role="User" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteMaster" Role="CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CreditNoteMaster_VoucherType">
+          <End Type="AsyncAutomateAccountingModel.VoucherType" Role="VoucherType" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.CreditNoteMaster" Role="CreditNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CreditNoteMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailyAttendanceDetails_DailyAttendanceMaster">
+          <End Type="AsyncAutomateAccountingModel.DailyAttendanceMaster" Role="DailyAttendanceMaster" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailyAttendanceDetail" Role="DailyAttendanceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailyAttendanceMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyAttendanceDetail">
+              <PropertyRef Name="DailyAttendanceMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailyAttendanceDetails_Employee">
+          <End Type="AsyncAutomateAccountingModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailyAttendanceDetail" Role="DailyAttendanceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailyAttendanceDetail">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster">
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Role="DailySalaryVoucherMaster" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherDetail" Role="DailySalaryVoucherDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherDetail">
+              <PropertyRef Name="DailySalaryVoucherMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherDetails_Employee">
+          <End Type="AsyncAutomateAccountingModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherDetail" Role="DailySalaryVoucherDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherDetail">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_FinancialYear">
+          <End Type="AsyncAutomateAccountingModel.FinancialYear" Role="FinancialYear" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Role="DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_SuffixPrefix">
+          <End Type="AsyncAutomateAccountingModel.SuffixPrefix" Role="SuffixPrefix" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Role="DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DailySalaryVoucherMaster_VoucherType">
+          <End Type="AsyncAutomateAccountingModel.VoucherType" Role="VoucherType" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Role="DailySalaryVoucherMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DailySalaryVoucherMaster">
+              <PropertyRef Name="VoucherTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_DebitNoteMaster">
+          <End Type="AsyncAutomateAccountingModel.DebitNoteMaster" Role="DebitNoteMaster" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteDetail" Role="DebitNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DebitNoteMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetail">
+              <PropertyRef Name="DebitNoteMasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteDetails_ExchangeRate">
+          <End Type="AsyncAutomateAccountingModel.ExchangeRate" Role="ExchangeRate" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteDetail" Role="DebitNoteDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExchangeRate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteDetail">
+              <PropertyRef Name="ExchangeRateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_FinancialYear">
+          <End Type="AsyncAutomateAccountingModel.FinancialYear" Role="FinancialYear" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteMaster" Role="DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialYear">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="FinancialYearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_SuffixPrefix">
+          <End Type="AsyncAutomateAccountingModel.SuffixPrefix" Role="SuffixPrefix" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteMaster" Role="DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SuffixPrefix">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="SuffixPrefixId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_User">
+          <End Type="AsyncAutomateAccountingModel.User" Role="User" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteMaster" Role="DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DebitNoteMaster_VoucherType">
+          <End Type="AsyncAutomateAccountingModel.VoucherType" Role="VoucherType" Multiplicity="1" />
+          <End Type="AsyncAutomateAccountingModel.DebitNoteMaster" Role="DebitNoteMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoucherType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DebitNoteMaster">
+              <PropertyRef Name="VoucherTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3370,6 +4826,190 @@
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Boms">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.Bom">
+              <MappingFragment StoreEntitySet="Bom">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="ManufacturingDate" ColumnName="ManufacturingDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContraDetails">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.ContraDetail">
+              <MappingFragment StoreEntitySet="ContraDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+                <ScalarProperty Name="ExchangeRateId" ColumnName="ExchangeRateId" />
+                <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+                <ScalarProperty Name="ContraMasterId" ColumnName="ContraMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContraMasters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.ContraMaster">
+              <MappingFragment StoreEntitySet="ContraMaster">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+                <ScalarProperty Name="VoucherTypeId" ColumnName="VoucherTypeId" />
+                <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+                <ScalarProperty Name="SuffixPrefixId" ColumnName="SuffixPrefixId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Counters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.Counter">
+              <MappingFragment StoreEntitySet="Counter">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="CounterName" ColumnName="CounterName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreditNoteDetails">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.CreditNoteDetail">
+              <MappingFragment StoreEntitySet="CreditNoteDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+                <ScalarProperty Name="ExchangeRateId" ColumnName="ExchangeRateId" />
+                <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+                <ScalarProperty Name="CreditNoteMasterId" ColumnName="CreditNoteMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreditNoteMasters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.CreditNoteMaster">
+              <MappingFragment StoreEntitySet="CreditNoteMaster">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+                <ScalarProperty Name="VoucherTypeId" ColumnName="VoucherTypeId" />
+                <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SuffixPrefixId" ColumnName="SuffixPrefixId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailyAttendanceDetails">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DailyAttendanceDetail">
+              <MappingFragment StoreEntitySet="DailyAttendanceDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="DailyAttendanceMasterId" ColumnName="DailyAttendanceMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailyAttendanceMasters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DailyAttendanceMaster">
+              <MappingFragment StoreEntitySet="DailyAttendanceMaster">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailySalaryVoucherDetails">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DailySalaryVoucherDetail">
+              <MappingFragment StoreEntitySet="DailySalaryVoucherDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Wage" ColumnName="Wage" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="DailySalaryVoucherMasterId" ColumnName="DailySalaryVoucherMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DailySalaryVoucherMasters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DailySalaryVoucherMaster">
+              <MappingFragment StoreEntitySet="DailySalaryVoucherMaster">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="SalaryDate" ColumnName="SalaryDate" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+                <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+                <ScalarProperty Name="VoucherTypeId" ColumnName="VoucherTypeId" />
+                <ScalarProperty Name="SuffixPrefixId" ColumnName="SuffixPrefixId" />
+                <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DebitNoteDetails">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DebitNoteDetail">
+              <MappingFragment StoreEntitySet="DebitNoteDetails">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeNumber" ColumnName="ChequeNumber" />
+                <ScalarProperty Name="ExchangeRateId" ColumnName="ExchangeRateId" />
+                <ScalarProperty Name="LedgerId" ColumnName="LedgerId" />
+                <ScalarProperty Name="DebitNoteMasterId" ColumnName="DebitNoteMasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DebitNoteMasters">
+            <EntityTypeMapping TypeName="AsyncAutomateAccountingModel.DebitNoteMaster">
+              <MappingFragment StoreEntitySet="DebitNoteMaster">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="VoucherNumber" ColumnName="VoucherNumber" />
+                <ScalarProperty Name="VoucherTypeId" ColumnName="VoucherTypeId" />
+                <ScalarProperty Name="FinancialYearId" ColumnName="FinancialYearId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SuffixPrefixId" ColumnName="SuffixPrefixId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

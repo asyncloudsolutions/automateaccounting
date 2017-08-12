@@ -14,6 +14,14 @@ namespace AAA.Entities
     
     public partial class ExchangeRate
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ExchangeRate()
+        {
+            this.ContraDetails = new HashSet<ContraDetail>();
+            this.CreditNoteDetails = new HashSet<CreditNoteDetail>();
+            this.DebitNoteDetails = new HashSet<DebitNoteDetail>();
+        }
+    
         public int Id { get; set; }
         public int CurrencyId { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
@@ -23,5 +31,11 @@ namespace AAA.Entities
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual Currency Currency { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ContraDetail> ContraDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CreditNoteDetail> CreditNoteDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DebitNoteDetail> DebitNoteDetails { get; set; }
     }
 }

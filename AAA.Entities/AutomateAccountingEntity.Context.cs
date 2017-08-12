@@ -66,5 +66,17 @@ namespace AAA.Entities
         public virtual DbSet<ExchangeRate> ExchangeRates { get; set; }
         public virtual DbSet<Field> Fields { get; set; }
         public virtual DbSet<Form> Forms { get; set; }
+        public virtual DbSet<Bom> Boms { get; set; }
+        public virtual DbSet<ContraDetail> ContraDetails { get; set; }
+        public virtual DbSet<ContraMaster> ContraMasters { get; set; }
+        public virtual DbSet<Counter> Counters { get; set; }
+        public virtual DbSet<CreditNoteDetail> CreditNoteDetails { get; set; }
+        public virtual DbSet<CreditNoteMaster> CreditNoteMasters { get; set; }
+        public virtual DbSet<DailyAttendanceDetail> DailyAttendanceDetails { get; set; }
+        public virtual DbSet<DailyAttendanceMaster> DailyAttendanceMasters { get; set; }
+        public virtual DbSet<DailySalaryVoucherDetail> DailySalaryVoucherDetails { get; set; }
+        public virtual DbSet<DailySalaryVoucherMaster> DailySalaryVoucherMasters { get; set; }
+        public virtual DbSet<DebitNoteDetail> DebitNoteDetails { get; set; }
+        public virtual DbSet<DebitNoteMaster> DebitNoteMasters { get; set; }
     }
 }

@@ -19,6 +19,8 @@ namespace AAA.Entities
         {
             this.AdvancePayments = new HashSet<AdvancePayment>();
             this.BonusDeductions = new HashSet<BonusDeduction>();
+            this.DailyAttendanceDetails = new HashSet<DailyAttendanceDetail>();
+            this.DailySalaryVoucherDetails = new HashSet<DailySalaryVoucherDetail>();
         }
     
         public int Id { get; set; }
@@ -61,5 +63,9 @@ namespace AAA.Entities
         public virtual ICollection<AdvancePayment> AdvancePayments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BonusDeduction> BonusDeductions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DailyAttendanceDetail> DailyAttendanceDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DailySalaryVoucherDetail> DailySalaryVoucherDetails { get; set; }
     }
 }

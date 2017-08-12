@@ -86,6 +86,50 @@
         <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Form" Width="1.5" PointX="0.75" PointY="21" />
         <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ExchangeRate_Currency" />
         <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Fields_Form" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Bom" Width="1.5" PointX="27.125" PointY="19.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.ContraDetail" Width="1.5" PointX="25.375" PointY="15.25" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.ContraMaster" Width="1.5" PointX="17.125" PointY="13.375" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraDetails_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraMaster_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Bom_Product" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_Bom_Unit" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraDetails_ContraMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraDetails_ExchangeRate" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraMaster_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraMaster_SuffixPrefix" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraMaster_User" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_ContraMaster_VoucherType" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.Counter" Width="1.5" PointX="5.375" PointY="26.375" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.CreditNoteDetail" Width="1.5" PointX="23.125" PointY="7.25" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.CreditNoteMaster" Width="1.5" PointX="12" PointY="0.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DailyAttendanceDetail" Width="1.5" PointX="22.875" PointY="3.25" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DailyAttendanceMaster" Width="1.5" PointX="20.625" PointY="32.625" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DailySalaryVoucherDetail" Width="1.5" PointX="25.375" PointY="9.875" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DailySalaryVoucherMaster" Width="1.5" PointX="23.125" PointY="11.5" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DebitNoteDetail" Width="1.5" PointX="26.25" PointY="13.75" />
+        <EntityTypeShape EntityType="AsyncAutomateAccountingModel.DebitNoteMaster" Width="1.5" PointX="20" PointY="1.75" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_AccountLedger" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_CreditNoteMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteDetails_ExchangeRate" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_SuffixPrefix" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_User" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_CreditNoteMaster_VoucherType" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_DailyAttendanceMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailyAttendanceDetails_Employee" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_DailySalaryVoucherMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherDetails_Employee" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_SuffixPrefix" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DailySalaryVoucherMaster_VoucherType" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_DebitNoteMaster" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteDetails_ExchangeRate" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_FinancialYear" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_SuffixPrefix" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_User" />
+        <AssociationConnector Association="AsyncAutomateAccountingModel.FK_DebitNoteMaster_VoucherType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
