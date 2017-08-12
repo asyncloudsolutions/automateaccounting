@@ -20,5 +20,18 @@ namespace AAA.ReqResp
     public class UpsertBaseCompanyResponse : CommonUpsertResponse<BaseCompanyModel> { }
     #endregion
     #endregion
+    #region CompanyPath
+    #region Get
+    public class GetBaseCompanyPathsRequest : CommonGetRequest { }
+
+    public class GetBaseCompanyPathsResponse : CommonGetResponse<BaseCompanyPathModel> { }
+    #endregion
+
+    #region Upsert
+    public class UpsertBaseCompanyPathRequest : CommonUpsertRequest<BaseCompanyPathModel> { }
+
+    public class UpsertBaseCompanyPathResponse : CommonUpsertResponse<BaseCompanyPathModel> { }
+    #endregion
+    #endregion
 }
 
