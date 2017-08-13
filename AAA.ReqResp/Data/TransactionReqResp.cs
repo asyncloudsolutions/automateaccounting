@@ -21,7 +21,7 @@ namespace AAA.ReqResp
     #endregion
     #endregion
 
-     #region BankReconciliation
+    #region BankReconciliation
     #region Get
     public class GetBaseBankReconciliationsRequest : CommonGetRequest { }
 

@@ -62,6 +62,7 @@ namespace AAA.ReqResp.Data
     public class UpsertBaseVoucherTypeResponse : CommonUpsertResponse<BaseVoucherTypeModel> { }
     #endregion
     #endregion
+
     #region AccountGroup
     #region Get
     public class GetBaseAccountGroupsRequest : CommonGetRequest { }
@@ -90,7 +91,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region AdditionalCost
+    #region AdditionalCost
     #region Get
     public class GetBaseAdditionalCostsRequest : CommonGetRequest { }
 
@@ -118,7 +119,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region Area
+    #region Area
     #region Get
     public class GetBaseAreasRequest : CommonGetRequest { }
 
@@ -134,9 +135,9 @@ namespace AAA.ReqResp.Data
 
     #region Batch
     #region Get
-    public class GetBaseBatchsRequest : CommonGetRequest { }
+    public class GetBaseBatchesRequest : CommonGetRequest { }
 
-    public class GetBaseBatchsResponse : CommonGetResponse<BaseBatchModel> { }
+    public class GetBaseBatchesResponse : CommonGetResponse<BaseBatchModel> { }
     #endregion
 
     #region Upsert
@@ -146,7 +147,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region Brand
+    #region Brand
     #region Get
     public class GetBaseBrandsRequest : CommonGetRequest { }
 
@@ -160,7 +161,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-      #region ExchangeRate
+    #region ExchangeRate
     #region Get
     public class GetBaseExchangeRatesRequest : CommonGetRequest { }
 
@@ -174,7 +175,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-      #region Godown
+    #region Godown
     #region Get
     public class GetBaseGodownsRequest : CommonGetRequest { }
 
@@ -188,7 +189,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-      #region ModelNumber
+    #region ModelNumber
     #region Get
     public class GetBaseModelNumbersRequest : CommonGetRequest { }
 
@@ -202,7 +203,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region PricingLevel
+    #region PricingLevel
     #region Get
     public class GetBasePricingLevelsRequest : CommonGetRequest { }
 
@@ -216,7 +217,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-      #region ProductGroup
+    #region ProductGroup
     #region Get
     public class GetBaseProductGroupsRequest : CommonGetRequest { }
 
@@ -230,7 +231,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region Product
+    #region Product
     #region Get
     public class GetBaseProductsRequest : CommonGetRequest { }
 
@@ -258,7 +259,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region Route
+    #region Route
     #region Get
     public class GetBaseRoutesRequest : CommonGetRequest { }
 
@@ -272,7 +273,7 @@ namespace AAA.ReqResp.Data
     #endregion
     #endregion
 
-     #region Size
+    #region Size
     #region Get
     public class GetBaseSizesRequest : CommonGetRequest { }
 
@@ -299,6 +300,4 @@ namespace AAA.ReqResp.Data
     public class UpsertBaseUnitResponse : CommonUpsertResponse<BaseUnitModel> { }
     #endregion
     #endregion
-
-
 }
