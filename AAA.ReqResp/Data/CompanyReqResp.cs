@@ -20,6 +20,7 @@ namespace AAA.ReqResp
     public class UpsertBaseCompanyResponse : CommonUpsertResponse<BaseCompanyModel> { }
     #endregion
     #endregion
+
     #region CompanyPath
     #region Get
     public class GetBaseCompanyPathsRequest : CommonGetRequest { }
@@ -33,5 +34,6 @@ namespace AAA.ReqResp
     public class UpsertBaseCompanyPathResponse : CommonUpsertResponse<BaseCompanyPathModel> { }
     #endregion
     #endregion
+
 }
 
