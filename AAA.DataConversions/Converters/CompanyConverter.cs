@@ -37,5 +37,19 @@ namespace AAA.DataConversions
             return _result;
         }
         #endregion
+
+        #region CompanyPathPath
+        public static CompanyPath ToCompanyPath(this BaseCompanyPathModel companyPath)
+        {
+            CompanyPath _result = new CompanyPath();
+            if (companyPath.Id.HasValue) { _result.Id = companyPath.Id.GetValueOrDefault(); }
+            _result.CompanyName = companyPath.CompanyName;
+            _result.CompanyPath1 = companyPath.CompanyPath1;
+            _result.IsDefault = companyPath.IsDefault;
+            _result.CreatedDate = companyPath.CreatedDate;
+            _result.ModifiedDate = companyPath.ModifiedDate;
+            return _result;
+        }
+        #endregion
     }
 }
