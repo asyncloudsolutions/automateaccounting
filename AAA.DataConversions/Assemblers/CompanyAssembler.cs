@@ -44,5 +44,24 @@ namespace AAA.DataConversions
             return _result;
         }
         #endregion
+
+        #region CompanyPath
+        public static IList<BaseCompanyPathModel> ToBaseCompaniesPath(this List<CompanyPath> companiesPath)
+        {
+            IList<BaseCompanyPathModel> _result = new List<BaseCompanyPathModel>();
+            companiesPath.ForEach(companyPath => _result.Add(companyPath.ToBaseCompanyPath()));
+            return _result;
+        }
+
+        public static BaseCompanyPathModel ToBaseCompanyPath(this CompanyPath companyPath)
+        {
+            BaseCompanyPathModel _result = new BaseCompanyPathModel();
+            _result.Id = companyPath.Id;
+            _result.CompanyName = companyPath.CompanyName;
+            _result.CompanyPath1 = companyPath.CompanyPath1;
+            _result.IsDefault = companyPath.IsDefault;
+            return _result;
+        }
+        #endregion
     }
 }
