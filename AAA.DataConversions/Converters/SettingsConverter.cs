@@ -126,7 +126,7 @@ namespace AAA.DataConversions
         #endregion
 
         #region BarcodeSetting
-        public static BarcodeSetting ToBarCodeSetting(this BaseBarcodeSettingModel barCodeSetting)
+        public static BarcodeSetting ToBarcodeSetting(this BaseBarcodeSettingModel barCodeSetting)
         {
             BarcodeSetting _result = new BarcodeSetting();
             if (barCodeSetting.Id.HasValue) { _result.Id = barCodeSetting.Id.GetValueOrDefault(); }
