@@ -44,7 +44,7 @@ namespace AAA.ReqResp
 
     #region BarcodeSettingModel
     #region Get
-    public class GetBarcodeSettingModelsRequest : CommonGetRequest { }
+    public class GetBarcodeSettingResponse : CommonGetRequest { }
 
     public class GetBarcodeSettingModelsResponse : CommonGetResponse<BaseBarcodeSettingModel> { }
     #endregion
@@ -135,7 +135,10 @@ namespace AAA.ReqResp
 
     #region SuffixPrifix
     #region Get
-    public class GetBaseSuffixPrifixesRequest : CommonGetRequest { }
+    public class GetBaseSuffixPrifixesRequest : CommonGetRequest
+    {
+        public readonly string SuffixPrefixName;
+    }
 
     public class GetBaseSuffixPrifixesResponse : CommonGetResponse<BaseSuffixPrefixModel> { }
     #endregion

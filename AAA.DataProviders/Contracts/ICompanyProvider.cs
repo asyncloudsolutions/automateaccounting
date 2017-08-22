@@ -18,5 +18,17 @@ namespace AAA.DataProviders
         Task<UpsertBaseCompanyResponse> UpsertBaseCompanyAsync(UpsertBaseCompanyRequest request);
         #endregion
         #endregion
+
+        #region CompanyPathPath
+        #region Get
+        Task<GetBaseCompaniesResponse> GetBaseCompanyPathsAsync(GetBaseCompaniesRequest request);
+        #endregion
+
+        #region Upsert
+        Task<UpsertBaseCompanyPathResponse> UpsertBaseCompanyPathAsync(UpsertBaseCompanyPathRequest request);
+        #endregion
+        #endregion
+
+
     }
 }
