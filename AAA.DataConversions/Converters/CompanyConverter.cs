@@ -38,7 +38,7 @@ namespace AAA.DataConversions
         }
         #endregion
 
-        #region CompanyPathPath
+        #region CompanyPath
         public static CompanyPath ToCompanyPath(this BaseCompanyPathModel companyPath)
         {
             CompanyPath _result = new CompanyPath();

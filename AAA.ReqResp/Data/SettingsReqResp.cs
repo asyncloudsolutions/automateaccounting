@@ -137,13 +137,13 @@ namespace AAA.ReqResp
     #region Get
     public class GetBaseSuffixPrifixesRequest : CommonGetRequest { }
 
-    public class GetBaseSuffixPrifixesResponse : CommonGetResponse<BaseSuffixPrifixModel> { }
+    public class GetBaseSuffixPrifixesResponse : CommonGetResponse<BaseSuffixPrefixModel> { }
     #endregion
 
     #region Upsert
-    public class UpsertBaseSuffixPrifixRequest : CommonUpsertRequest<BaseSuffixPrifixModel> { }
+    public class UpsertBaseSuffixPrifixRequest : CommonUpsertRequest<BaseSuffixPrefixModel> { }
 
-    public class UpsertBaseSuffixPrifixResponse : CommonUpsertResponse<BaseSuffixPrifixModel> { }
+    public class UpsertBaseSuffixPrifixResponse : CommonUpsertResponse<BaseSuffixPrefixModel> { }
 
     #endregion
     #endregion

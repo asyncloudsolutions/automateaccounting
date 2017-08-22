@@ -27,21 +27,21 @@ namespace AAA.DataConversions
         #endregion
 
         #region SuffixPrifix
-        public static SuffixPrefix ToSuffixPrifix(this BaseSuffixPrifixModel suffixPrifix)
+        public static SuffixPrefix ToSuffixPrefix(this BaseSuffixPrefixModel suffixPrefix)
         {
             SuffixPrefix _result = new SuffixPrefix();
-            if (suffixPrifix.Id.HasValue) { _result.Id = suffixPrifix.Id.GetValueOrDefault(); }
-            _result.FromDate = suffixPrifix.FromDate;
-            _result.ToDate = suffixPrifix.ToDate;
-            _result.StartIndex = suffixPrifix.StartIndex;
-            _result.Prefix = suffixPrifix.Prefix;
-            _result.Suffix = suffixPrifix.Suffix;
-            _result.WidthOfNumericalPart = suffixPrifix.WidthOfNumericalPart;
-            _result.PrefillWithZero = suffixPrifix.PrefillWithZero;
-            _result.Narration = suffixPrifix.Narration;
-            _result.VoucherTypeId = suffixPrifix.VoucherTypeId;
-            _result.CreatedDate = suffixPrifix.CreatedDate;
-            _result.ModifiedDate = suffixPrifix.ModifiedDate;
+            if (suffixPrefix.Id.HasValue) { _result.Id = suffixPrefix.Id.GetValueOrDefault(); }
+            _result.FromDate = suffixPrefix.FromDate;
+            _result.ToDate = suffixPrefix.ToDate;
+            _result.StartIndex = suffixPrefix.StartIndex;
+            _result.Prefix = suffixPrefix.Prefix;
+            _result.Suffix = suffixPrefix.Suffix;
+            _result.WidthOfNumericalPart = suffixPrefix.WidthOfNumericalPart;
+            _result.PrefillWithZero = suffixPrefix.PrefillWithZero;
+            _result.Narration = suffixPrefix.Narration;
+            _result.VoucherTypeId = suffixPrefix.VoucherTypeId;
+            _result.CreatedDate = suffixPrefix.CreatedDate;
+            _result.ModifiedDate = suffixPrefix.ModifiedDate;
             return _result;
         }
         #endregion
@@ -126,32 +126,30 @@ namespace AAA.DataConversions
         #endregion
 
         #region BarcodeSetting
-        public static BarcodeSetting ToBarCodeSetting(this BaseBarcodeSettingModel barCodeSetting)
+        public static BarcodeSetting ToBarcodeSetting(this BaseBarcodeSettingModel barcodeSetting)
         {
             BarcodeSetting _result = new BarcodeSetting();
-            if (barCodeSetting.Id.HasValue) { _result.Id = barCodeSetting.Id.GetValueOrDefault(); }
-            _result.ShowProductCode = barCodeSetting.ShowProductCode;
-            _result.ShowCompanyName = barCodeSetting.ShowCompanyName;
-            _result.ShowPurchaseRate = barCodeSetting.ShowPurchaseRate;
-            _result.ShowMRP = barCodeSetting.ShowMRP;
-            _result.CompanyName = barCodeSetting.CompanyName;
-            _result.Point = barCodeSetting.Point;
-            _result.Zero = barCodeSetting.Zero;
-            _result.One = barCodeSetting.One;
-            _result.Two = barCodeSetting.Two;
-            _result.Three = barCodeSetting.Three;
-            _result.Four = barCodeSetting.Four;
-            _result.Five = barCodeSetting.Five;
-            _result.Six = barCodeSetting.Six;
-            _result.Seven = barCodeSetting.Seven;
-            _result.Eight = barCodeSetting.Eight;
-            _result.Nine = barCodeSetting.Nine;
-            _result.CreatedDate = barCodeSetting.CreatedDate;
-            _result.ModifiedDate = barCodeSetting.ModifiedDate;
+            if (barcodeSetting.Id.HasValue) { _result.Id = barcodeSetting.Id.GetValueOrDefault(); }
+            _result.ShowProductCode = barcodeSetting.ShowProductCode;
+            _result.ShowCompanyName = barcodeSetting.ShowCompanyName;
+            _result.ShowPurchaseRate = barcodeSetting.ShowPurchaseRate;
+            _result.ShowMRP = barcodeSetting.ShowMRP;
+            _result.CompanyName = barcodeSetting.CompanyName;
+            _result.Point = barcodeSetting.Point;
+            _result.Zero = barcodeSetting.Zero;
+            _result.One = barcodeSetting.One;
+            _result.Two = barcodeSetting.Two;
+            _result.Three = barcodeSetting.Three;
+            _result.Four = barcodeSetting.Four;
+            _result.Five = barcodeSetting.Five;
+            _result.Six = barcodeSetting.Six;
+            _result.Seven = barcodeSetting.Seven;
+            _result.Eight = barcodeSetting.Eight;
+            _result.Nine = barcodeSetting.Nine;
+            _result.CreatedDate = barcodeSetting.CreatedDate;
+            _result.ModifiedDate = barcodeSetting.ModifiedDate;
             return _result;
         }
         #endregion
-
-
     }
 }

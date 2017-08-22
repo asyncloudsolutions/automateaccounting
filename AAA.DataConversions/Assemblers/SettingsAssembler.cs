@@ -11,105 +11,116 @@ namespace AAA.DataConversions
     public static class SettingsAssembler
     {
         #region BarcodeSetting
-
-        public static IList<BaseBarcodeSettingModel> ToBaseBarcodeSetting(this List<BarcodeSetting> barcodeSettings)
+        public static IList<BaseBarcodeSettingModel> ToBaseBarcodeSettings(this List<BarcodeSetting> barcodeSettings)
         {
             IList<BaseBarcodeSettingModel> _result = new List<BaseBarcodeSettingModel>();
-            barcodeSettings.ForEach(BarcodeSetting => _result.Add(BarcodeSetting.ToBaseBarcodeSetting()));
+            barcodeSettings.ForEach(barcodeSetting => _result.Add(barcodeSetting.ToBaseBarcodeSetting()));
             return _result;
         }
 
-        public static BaseBarcodeSettingModel ToBaseBarcodeSetting(this BarcodeSetting BarcodeSetting)
+        public static BaseBarcodeSettingModel ToBaseBarcodeSetting(this BarcodeSetting barcodeSetting)
         {
             BaseBarcodeSettingModel _result = new BaseBarcodeSettingModel();
-            _result.ShowProductCode = BarcodeSetting.ShowProductCode;
-            _result.ShowCompanyName = BarcodeSetting.ShowCompanyName;
-            _result.ShowPurchaseRate = BarcodeSetting.ShowPurchaseRate;
-            _result.ShowMRP = BarcodeSetting.ShowMRP;
-            _result.CompanyName = BarcodeSetting.CompanyName;
-            _result.Point = BarcodeSetting.Point;
-            _result.Zero = BarcodeSetting.Zero;
-            _result.One = BarcodeSetting.One;
-            _result.Two = BarcodeSetting.Two;
-            _result.Three = BarcodeSetting.Three;
-            _result.Four = BarcodeSetting.Four;
-            _result.Five = BarcodeSetting.Five;
-            _result.Six = BarcodeSetting.Six;
-            _result.Seven = BarcodeSetting.Seven;
-            _result.Eight = BarcodeSetting.Eight;
-            _result.Nine = BarcodeSetting.Nine;
-
+            _result.Id = barcodeSetting.Id;
+            _result.ShowProductCode = barcodeSetting.ShowProductCode;
+            _result.ShowCompanyName = barcodeSetting.ShowCompanyName;
+            _result.ShowPurchaseRate = barcodeSetting.ShowPurchaseRate;
+            _result.ShowMRP = barcodeSetting.ShowMRP;
+            _result.CompanyName = barcodeSetting.CompanyName;
+            _result.Point = barcodeSetting.Point;
+            _result.Zero = barcodeSetting.Zero;
+            _result.One = barcodeSetting.One;
+            _result.Two = barcodeSetting.Two;
+            _result.Three = barcodeSetting.Three;
+            _result.Four = barcodeSetting.Four;
+            _result.Five = barcodeSetting.Five;
+            _result.Six = barcodeSetting.Six;
+            _result.Seven = barcodeSetting.Seven;
+            _result.Eight = barcodeSetting.Eight;
+            _result.Nine = barcodeSetting.Nine;
+            _result.CreatedDate = barcodeSetting.CreatedDate;
+            _result.ModifiedDate = barcodeSetting.ModifiedDate;
             return _result;
         }
-
         #endregion
 
         #region Field
-        public static IList<BaseFieldModel> ToBaseField(this List<Field> Fields)
+        public static IList<BaseFieldModel> ToBaseFields(this List<Field> fields)
         {
             IList<BaseFieldModel> _result = new List<BaseFieldModel>();
-            Fields.ForEach(Field => _result.Add(Field.ToBaseField()));
+            fields.ForEach(field => _result.Add(field.ToBaseField()));
             return _result;
         }
 
-        public static BaseFieldModel ToBaseField(this Field Field)
+        public static BaseFieldModel ToBaseField(this Field field)
         {
             BaseFieldModel _result = new BaseFieldModel();
-            _result.FormId = Field.Id;
-            _result.FieldName = Field.FieldName;
+            _result.Id = field.Id;
+            _result.FormId = field.FormId;
+            _result.FieldName = field.FieldName;
+            _result.CreatedDate = field.CreatedDate;
+            _result.ModifiedDate = field.ModifiedDate;
             return _result;
         }
         #endregion
 
         #region FinancialYear
-        public static IList<BaseFinancialYearModel> ToBaseFinancialYear(this List<FinancialYear> financialYears)
+        public static IList<BaseFinancialYearModel> ToBaseFinancialYears(this List<FinancialYear> financialYears)
         {
             IList<BaseFinancialYearModel> _result = new List<BaseFinancialYearModel>();
-            financialYears.ForEach(FinancialYear => _result.Add(FinancialYear.ToBaseFinancialYear()));
+            financialYears.ForEach(financialYear => _result.Add(financialYear.ToBaseFinancialYear()));
             return _result;
         }
 
-        public static BaseFinancialYearModel ToBaseFinancialYear(this FinancialYear FinancialYear)
+        public static BaseFinancialYearModel ToBaseFinancialYear(this FinancialYear financialYear)
         {
             BaseFinancialYearModel _result = new BaseFinancialYearModel();
-            _result.FromDate = FinancialYear.FromDate;
-            _result.ToDate = FinancialYear.ToDate;
+            _result.Id = financialYear.Id;
+            _result.FromDate = financialYear.FromDate;
+            _result.ToDate = financialYear.ToDate;
+            _result.CreatedDate = financialYear.CreatedDate;
+            _result.ModifiedDate = financialYear.ModifiedDate;
             return _result;
         }
         #endregion
 
         #region Form
-        public static IList<BaseFormModel> ToBaseForm(this List<Form> Forms)
+        public static IList<BaseFormModel> ToBaseForms(this List<Form> forms)
         {
             IList<BaseFormModel> _result = new List<BaseFormModel>();
-            Forms.ForEach(Form => _result.Add(Form.ToBaseForm()));
+            forms.ForEach(form => _result.Add(form.ToBaseForm()));
             return _result;
         }
 
-        public static BaseFormModel ToBaseForm(this Form Form)
+        public static BaseFormModel ToBaseForm(this Form form)
         {
             BaseFormModel _result = new BaseFormModel();
-            _result.FormName = Form.FormName;
+            _result.Id = form.Id;
+            _result.FormName = form.FormName;
+            _result.CreatedDate = form.CreatedDate;
+            _result.ModifiedDate = form.ModifiedDate;
             return _result;
         }
         #endregion
 
         #region Privilege
-        public static IList<BasePrivilegeModel> ToBasePrivilege(this List<Privilege> privileges)
+        public static IList<BasePrivilegeModel> ToBasePrivileges(this List<Privilege> privileges)
         {
             IList<BasePrivilegeModel> _result = new List<BasePrivilegeModel>();
-            privileges.ForEach(Privilege => _result.Add(Privilege.ToBasePrivilege()));
+            privileges.ForEach(privilege => _result.Add(privilege.ToBasePrivilege()));
             return _result;
         }
 
-        public static BasePrivilegeModel ToBasePrivilege(this Privilege Privilege)
+        public static BasePrivilegeModel ToBasePrivilege(this Privilege privilege)
         {
             BasePrivilegeModel _result = new BasePrivilegeModel();
-            _result.Action = Privilege.Action;
-            _result.RoleId = Privilege.RoleId;
-            _result.Narration = Privilege.Narration;
-            _result.FormName = Privilege.FormName;
-
+            _result.Id = privilege.Id;
+            _result.Action = privilege.Action;
+            _result.RoleId = privilege.RoleId;
+            _result.Narration = privilege.Narration;
+            _result.FormName = privilege.FormName;
+            _result.CreatedDate = privilege.CreatedDate;
+            _result.ModifiedDate = privilege.ModifiedDate;
             return _result;
         }
         #endregion
@@ -135,48 +146,50 @@ namespace AAA.DataConversions
         #endregion
 
         #region Setting
-        public static IList<BaseSettingModel> ToBaseSetting(this List<Setting> settings)
+        public static IList<BaseSettingModel> ToBaseSettings(this List<Setting> settings)
         {
             IList<BaseSettingModel> _result = new List<BaseSettingModel>();
-            settings.ForEach(Setting => _result.Add(Setting.ToBaseSetting()));
+            settings.ForEach(setting => _result.Add(setting.ToBaseSetting()));
             return _result;
         }
 
-        public static BaseSettingModel ToBaseSetting(this Setting Setting)
+        public static BaseSettingModel ToBaseSetting(this Setting setting)
         {
             BaseSettingModel _result = new BaseSettingModel();
-            _result.SettingsName = Setting.SettingsName;
-            _result.Status = Setting.Status;
+            _result.Id = setting.Id;
+            _result.SettingsName = setting.SettingsName;
+            _result.Status = setting.Status;
+            _result.CreatedDate = setting.CreatedDate;
+            _result.ModifiedDate = setting.ModifiedDate;
             return _result;
         }
         #endregion
 
-
-
         #region SuffixPrifix
-
-        public static IList<BaseSuffixPrifixModel> ToBaseSuffixPrifix(this List<SuffixPrefix> suffixPrifixs)
+        public static IList<BaseSuffixPrefixModel> ToBaseSuffixPrefixes(this List<SuffixPrefix> suffixPrifixes)
         {
-            IList<BaseSuffixPrifixModel> _result = new List<BaseSuffixPrifixModel>();
-            suffixPrifixs.ForEach(SuffixPrifix => _result.Add(SuffixPrifix.ToBaseSuffixPrifix()));
+            IList<BaseSuffixPrefixModel> _result = new List<BaseSuffixPrefixModel>();
+            suffixPrifixes.ForEach(suffixPrefix => _result.Add(suffixPrefix.ToBaseSuffixPrefix()));
             return _result;
         }
 
-        public static BaseSuffixPrifixModel ToBaseSuffixPrifix(this SuffixPrefix SuffixPrifix)
+        public static BaseSuffixPrefixModel ToBaseSuffixPrefix(this SuffixPrefix suffixPrefix)
         {
-            BaseSuffixPrifixModel _result = new BaseSuffixPrifixModel();
-            _result.FromDate = SuffixPrifix.FromDate;
-            _result.ToDate = SuffixPrifix.ToDate;
-            _result.StartIndex = SuffixPrifix.StartIndex;
-            _result.Prefix = SuffixPrifix.Prefix;
-            _result.Suffix = SuffixPrifix.Suffix;
-            _result.WidthOfNumericalPart = SuffixPrifix.WidthOfNumericalPart;
-            _result.PrefillWithZero = SuffixPrifix.PrefillWithZero;
-            _result.Narration = SuffixPrifix.Narration;
-            _result.VoucherTypeId = SuffixPrifix.VoucherTypeId;
+            BaseSuffixPrefixModel _result = new BaseSuffixPrefixModel();
+            _result.Id = suffixPrefix.Id;
+            _result.FromDate = suffixPrefix.FromDate;
+            _result.ToDate = suffixPrefix.ToDate;
+            _result.StartIndex = suffixPrefix.StartIndex;
+            _result.Prefix = suffixPrefix.Prefix;
+            _result.Suffix = suffixPrefix.Suffix;
+            _result.WidthOfNumericalPart = suffixPrefix.WidthOfNumericalPart;
+            _result.PrefillWithZero = suffixPrefix.PrefillWithZero;
+            _result.Narration = suffixPrefix.Narration;
+            _result.VoucherTypeId = suffixPrefix.VoucherTypeId;
+            _result.CreatedDate = suffixPrefix.CreatedDate;
+            _result.ModifiedDate = suffixPrefix.ModifiedDate;
             return _result;
         }
-
         #endregion
 
         #region User

@@ -14,20 +14,22 @@ namespace AAA.DataConversions
         public static IList<BaseBudgetMasterModel> ToBaseBudgetMasters(this List<BudgetMaster> budgetMasters)
         {
             IList<BaseBudgetMasterModel> _result = new List<BaseBudgetMasterModel>();
-            budgetMasters.ForEach(BudgetMaster => _result.Add(BudgetMaster.ToBaseBudgetMaster()));
+            budgetMasters.ForEach(budgetMaster => _result.Add(budgetMaster.ToBaseBudgetMaster()));
             return _result;
         }
 
-        public static BaseBudgetMasterModel ToBaseBudgetMaster(this BudgetMaster BudgetMaster)
+        public static BaseBudgetMasterModel ToBaseBudgetMaster(this BudgetMaster budgetMaster)
         {
             BaseBudgetMasterModel _result = new BaseBudgetMasterModel();
-            _result.BudgetName = BudgetMaster.BudgetName;
-            _result.Type = BudgetMaster.Type;
-            _result.FromDate = BudgetMaster.FromDate;
-            _result.ToDate = BudgetMaster.ToDate;
-            _result.TotalDr = BudgetMaster.TotalDr;
-            _result.TotalCr = BudgetMaster.TotalCr;
-            _result.Narration = BudgetMaster.Narration;
+            _result.BudgetName = budgetMaster.BudgetName;
+            _result.Type = budgetMaster.Type;
+            _result.FromDate = budgetMaster.FromDate;
+            _result.ToDate = budgetMaster.ToDate;
+            _result.TotalDr = budgetMaster.TotalDr;
+            _result.TotalCr = budgetMaster.TotalCr;
+            _result.Narration = budgetMaster.Narration;
+            _result.CreatedDate = budgetMaster.CreatedDate;
+            _result.ModifiedDate = budgetMaster.ModifiedDate;
             return _result;
         }
         #endregion
@@ -36,18 +38,20 @@ namespace AAA.DataConversions
         public static IList<BaseBudgetDetailModel> ToBaseBudgetDetail(this List<BudgetDetail> budgetDetails)
         {
             IList<BaseBudgetDetailModel> _result = new List<BaseBudgetDetailModel>();
-            budgetDetails.ForEach(BudgetDetail => _result.Add(BudgetDetail.ToBaseBudgetDetail()));
+            budgetDetails.ForEach(budgetDetail => _result.Add(budgetDetail.ToBaseBudgetDetail()));
             return _result;
         }
 
-        public static BaseBudgetDetailModel ToBaseBudgetDetail(this BudgetDetail BudgetDetail)
+        public static BaseBudgetDetailModel ToBaseBudgetDetail(this BudgetDetail budgetDetail)
         {
             BaseBudgetDetailModel _result = new BaseBudgetDetailModel();
-            _result.BudgetMasterId = BudgetDetail.BudgetMasterId;
-            _result.Particular = BudgetDetail.Particular;
-            _result.ExtraDate = BudgetDetail.ExtraDate;
-            _result.Credit = BudgetDetail.Credit;
-            _result.Debit = BudgetDetail.Debit;
+            _result.BudgetMasterId = budgetDetail.BudgetMasterId;
+            _result.Particular = budgetDetail.Particular;
+            _result.ExtraDate = budgetDetail.ExtraDate;
+            _result.Credit = budgetDetail.Credit;
+            _result.Debit = budgetDetail.Debit;
+            _result.CreatedDate = budgetDetail.CreatedDate;
+            _result.ModifiedDate = budgetDetail.ModifiedDate;
             return _result;
         }
         #endregion

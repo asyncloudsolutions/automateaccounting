@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AAA.DataModels
 {
-    public class BaseSuffixPrifixModel : CommonAuditDatesModel
+    public class BaseSuffixPrefixModel : CommonAuditDatesModel
     {
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }

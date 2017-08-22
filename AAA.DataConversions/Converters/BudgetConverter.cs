@@ -44,6 +44,5 @@ namespace AAA.DataConversions
             return _result;
         }
         #endregion
-
     }
 }

@@ -46,10 +46,10 @@ namespace AAA.DataConversions
         #endregion
 
         #region CompanyPath
-        public static IList<BaseCompanyPathModel> ToBaseCompaniesPath(this List<CompanyPath> companiesPath)
+        public static IList<BaseCompanyPathModel> ToBaseCompanyPaths(this List<CompanyPath> companyPaths)
         {
             IList<BaseCompanyPathModel> _result = new List<BaseCompanyPathModel>();
-            companiesPath.ForEach(companyPath => _result.Add(companyPath.ToBaseCompanyPath()));
+            companyPaths.ForEach(companyPath => _result.Add(companyPath.ToBaseCompanyPath()));
             return _result;
         }
 
@@ -60,6 +60,8 @@ namespace AAA.DataConversions
             _result.CompanyName = companyPath.CompanyName;
             _result.CompanyPath1 = companyPath.CompanyPath1;
             _result.IsDefault = companyPath.IsDefault;
+            _result.CreatedDate = companyPath.CreatedDate;
+            _result.ModifiedDate = companyPath.ModifiedDate;
             return _result;
         }
         #endregion

@@ -68,7 +68,7 @@ namespace AAA.DataConversions
         public static IList<BaseLedgerPostingModel> ToBaseLedgerPostings(this List<LedgerPosting> ledgerPostings)
         {
             IList<BaseLedgerPostingModel> _result = new List<BaseLedgerPostingModel>();
-            ledgerPostings.ForEach(ledgerposting => _result.Add(ledgerposting.ToBaseLedgerPosting()));
+            ledgerPostings.ForEach(ledgerPosting => _result.Add(ledgerPosting.ToBaseLedgerPosting()));
             return _result;
         }
 

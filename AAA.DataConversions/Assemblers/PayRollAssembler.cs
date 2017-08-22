@@ -11,116 +11,113 @@ namespace AAA.DataConversions
 {
     public static class PayRollAssembler
     {
-
         #region BonusDeduction
-
-        public static IList<BaseBonusDeductionModel> ToBaseBonusDeduction(this List<BonusDeduction> bonusDeductions)
+        public static IList<BaseBonusDeductionModel> ToBaseBonusDeductions(this List<BonusDeduction> bonusDeductions)
         {
             IList<BaseBonusDeductionModel> _result = new List<BaseBonusDeductionModel>();
-            bonusDeductions.ForEach(BonusDeduction => _result.Add(BonusDeduction.ToBaseBonusDeduction()));
+            bonusDeductions.ForEach(bonusDeduction => _result.Add(bonusDeduction.ToBaseBonusDeduction()));
             return _result;
         }
 
-        public static BaseBonusDeductionModel ToBaseBonusDeduction(this BonusDeduction BonusDeduction)
+        public static BaseBonusDeductionModel ToBaseBonusDeduction(this BonusDeduction bonusDeduction)
         {
             BaseBonusDeductionModel _result = new BaseBonusDeductionModel();
-            _result.EmployeeId = BonusDeduction.EmployeeId;
-            _result.Date = BonusDeduction.Date;
-            _result.Month = BonusDeduction.Month;
-            _result.BonusAmount = BonusDeduction.BonusAmount;
+            _result.EmployeeId = bonusDeduction.EmployeeId;
+            _result.Date = bonusDeduction.Date;
+            _result.Month = bonusDeduction.Month;
+            _result.BonusAmount = bonusDeduction.BonusAmount;
+            _result.CreatedDate = bonusDeduction.CreatedDate;
+            _result.ModifiedDate = bonusDeduction.ModifiedDate;
             return _result;
         }
-
         #endregion
 
         #region Designation
-
-        public static IList<BaseDesignationModel> ToBaseDesignation(this List<Designation> designations)
+        public static IList<BaseDesignationModel> ToBaseDesignations(this List<Designation> designations)
         {
             IList<BaseDesignationModel> _result = new List<BaseDesignationModel>();
-            designations.ForEach(Designation => _result.Add(Designation.ToBaseDesignation()));
+            designations.ForEach(designation => _result.Add(designation.ToBaseDesignation()));
             return _result;
         }
 
-        public static BaseDesignationModel ToBaseDesignation(this Designation Designation)
+        public static BaseDesignationModel ToBaseDesignation(this Designation designation)
         {
             BaseDesignationModel _result = new BaseDesignationModel();
-            _result.DesignationName = Designation.DesignationName;
-            _result.LeaveDays = Designation.LeaveDays;
-            _result.AdvanceAmount = Designation.AdvanceAmount;
-            _result.Narration = Designation.Narration;
+            _result.DesignationName = designation.DesignationName;
+            _result.LeaveDays = designation.LeaveDays;
+            _result.AdvanceAmount = designation.AdvanceAmount;
+            _result.Narration = designation.Narration;
+            _result.CreatedDate = designation.CreatedDate;
+            _result.ModifiedDate = designation.ModifiedDate;
             return _result;
         }
-
         #endregion
 
         #region SalaryPackage
-
-        public static IList<BaseSalaryPackageModel> ToBaseSalaryPackage(this List<SalaryPackage> salaryPackages)
+        public static IList<BaseSalaryPackageModel> ToBaseSalaryPackages(this List<SalaryPackage> salaryPackages)
         {
             IList<BaseSalaryPackageModel> _result = new List<BaseSalaryPackageModel>();
-            salaryPackages.ForEach(SalaryPackage => _result.Add(SalaryPackage.ToBaseSalaryPackage()));
+            salaryPackages.ForEach(salaryPackage => _result.Add(salaryPackage.ToBaseSalaryPackage()));
             return _result;
         }
 
-        public static BaseSalaryPackageModel ToBaseSalaryPackage(this SalaryPackage SalaryPackage)
+        public static BaseSalaryPackageModel ToBaseSalaryPackage(this SalaryPackage salaryPackage)
         {
             BaseSalaryPackageModel _result = new BaseSalaryPackageModel();
-            _result.SalaryPackageName = SalaryPackage.SalaryPackageName;
-            _result.IsActive = SalaryPackage.IsActive;
-            _result.Narration = SalaryPackage.Narration;
-            _result.TotalAmount = SalaryPackage.TotalAmount;
+            _result.SalaryPackageName = salaryPackage.SalaryPackageName;
+            _result.IsActive = salaryPackage.IsActive;
+            _result.Narration = salaryPackage.Narration;
+            _result.TotalAmount = salaryPackage.TotalAmount;
+            _result.CreatedDate = salaryPackage.CreatedDate;
+            _result.ModifiedDate = salaryPackage.ModifiedDate;
             return _result;
         }
-
         #endregion
 
         #region Employee
-
-        public static IList<BaseEmployeeModel> ToBaseEmployee(this List<Employee> employees)
+        public static IList<BaseEmployeeModel> ToBaseEmployees(this List<Employee> employees)
         {
             IList<BaseEmployeeModel> _result = new List<BaseEmployeeModel>();
-            employees.ForEach(Employee => _result.Add(Employee.ToBaseEmployee()));
+            employees.ForEach(employee => _result.Add(employee.ToBaseEmployee()));
             return _result;
         }
 
-        public static BaseEmployeeModel ToBaseEmployee(this Employee Employee)
+        public static BaseEmployeeModel ToBaseEmployee(this Employee employee)
         {
             BaseEmployeeModel _result = new BaseEmployeeModel();
-            _result.DesignationId = Employee.DesignationId;
-            _result.EmployeeName = Employee.EmployeeName;
-            _result.EmployeeCode = Employee.EmployeeCode;
-            _result.DateOfBirth = Employee.DateOfBirth;
-            _result.MaritalStatus = Employee.MaritalStatus;
-            _result.Gender = Employee.Gender;
-            _result.Qualification = Employee.Qualification;
-            _result.Address = Employee.Address;
-            _result.PhoneNumber = Employee.PhoneNumber;
-            _result.MobileNumber = Employee.MobileNumber;
-            _result.Email = Employee.Email;
-            _result.JoiningDate = Employee.JoiningDate;
-            _result.TerminationDate = Employee.TerminationDate;
-            _result.Narration = Employee.Narration;
-            _result.BloodGroup = Employee.BloodGroup;
-            _result.PassportNumber = Employee.PassportNumber;
-            _result.PassportExpiryDate = Employee.PassportExpiryDate;
-            _result.LabourCardNumber = Employee.LabourCardNumber;
-            _result.LabourCardExpiryDate = Employee.LabourCardExpiryDate;
-            _result.SalaryType = Employee.SalaryType;
-            _result.DailyWage = Employee.DailyWage;
-            _result.BankName = Employee.BankName;
-            _result.BranchName = Employee.BranchName;
-            _result.BankAccountNumber = Employee.BankAccountNumber;
-            _result.BranchCode = Employee.BranchCode;
-            _result.PANNumber = Employee.PANNumber;
-            _result.PFNumber = Employee.PFNumber;
-            _result.ESINumber = Employee.ESINumber;
-            _result.DefaultPackageId = Employee.DefaultPackageId;
-
+            _result.DesignationId = employee.DesignationId;
+            _result.EmployeeName = employee.EmployeeName;
+            _result.EmployeeCode = employee.EmployeeCode;
+            _result.DateOfBirth = employee.DateOfBirth;
+            _result.MaritalStatus = employee.MaritalStatus;
+            _result.Gender = employee.Gender;
+            _result.Qualification = employee.Qualification;
+            _result.Address = employee.Address;
+            _result.PhoneNumber = employee.PhoneNumber;
+            _result.MobileNumber = employee.MobileNumber;
+            _result.Email = employee.Email;
+            _result.JoiningDate = employee.JoiningDate;
+            _result.TerminationDate = employee.TerminationDate;
+            _result.Narration = employee.Narration;
+            _result.BloodGroup = employee.BloodGroup;
+            _result.PassportNumber = employee.PassportNumber;
+            _result.PassportExpiryDate = employee.PassportExpiryDate;
+            _result.LabourCardNumber = employee.LabourCardNumber;
+            _result.LabourCardExpiryDate = employee.LabourCardExpiryDate;
+            _result.SalaryType = employee.SalaryType;
+            _result.DailyWage = employee.DailyWage;
+            _result.BankName = employee.BankName;
+            _result.BranchName = employee.BranchName;
+            _result.BankAccountNumber = employee.BankAccountNumber;
+            _result.BranchCode = employee.BranchCode;
+            _result.PANNumber = employee.PANNumber;
+            _result.PFNumber = employee.PFNumber;
+            _result.ESINumber = employee.ESINumber;
+            _result.DefaultPackageId = employee.DefaultPackageId;
+            _result.CreatedDate = employee.CreatedDate;
+            _result.ModifiedDate = employee.ModifiedDate;
             return _result;
         }
-
         #endregion
-
     }
 }

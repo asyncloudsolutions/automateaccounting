@@ -76,7 +76,6 @@ namespace AAA.DataConversions
             _result.DefaultPackageId = employee.DefaultPackageId;
             _result.CreatedDate = employee.CreatedDate;
             _result.ModifiedDate = employee.ModifiedDate;
-
             return _result;
         }
         #endregion
